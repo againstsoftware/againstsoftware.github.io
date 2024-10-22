@@ -49,6 +49,7 @@
 
 /*** Background start ***/
 body {
+    font-family: "Elite Special", system-ui;
     background: url('../img/Fondo_liso.jpg') no-repeat center center fixed;
     background-size: cover;
 }
@@ -136,9 +137,14 @@ body {
 
 
 .sub-title {
-    font-family: "Edu TAS Beginner", cursive;
+    font-family: "Special Elite", system-ui;
     font-weight: 700;
     font-size: 22px;
+}
+
+.text-white {
+    color: #f8f9fa !important;
+    font-family: "Special Elite", system-ui;
 }
 
 
