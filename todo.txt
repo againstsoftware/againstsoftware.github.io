@@ -1,0 +1,23 @@
+Porfolio: (español e ingles)
+
+Integrantes:
+- foto
+- nombre
+- roles
+- estudios
+- habilidades tecnicas
+- enlaces a pags personales
+
+About
+- logo
+- cuando se fundo
+- mision vision y valores
+- manifiesto
+
+
+Proyectos de los miembros:
+- explicar que son proyectos de antes de fundar el estudio
+- thumbnail del protecto, nombvre, descripcion, herramientas usada(s) y enlace (opcional)
+
+
+Seccion de redes sociales
