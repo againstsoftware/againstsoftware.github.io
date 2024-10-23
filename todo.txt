@@ -1,7 +1,7 @@
 Porfolio: (español e ingles)
 
 --- HECHO DIRIA YO ----
-Integrantes:
+>>> Integrantes:
 - foto
 - nombre
 - roles
@@ -9,7 +9,7 @@ Integrantes:
 - habilidades tecnicas
 - enlaces a pags personales
 
-About
+>>> About
 - logo
 - cuando se fundo
 - mision vision y valores
@@ -22,3 +22,17 @@ Proyectos de los miembros:
 
 
 Seccion de redes sociales
+
+
+
+---- 
+
+>>> quitar marco
+
+>>> separar "nuestro manifiesto"
+
+terminar navbar
+
+>>> texto footer mas peque
+
+cambiar cabra por la q no tiene fondo
