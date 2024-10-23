@@ -21,7 +21,7 @@ Proyectos de los miembros:
 - thumbnail del protecto, nombvre, descripcion, herramientas usada(s) y enlace (opcional)
 
 
-Seccion de redes sociales
+>>> Seccion de redes sociales
 
 
 
@@ -35,4 +35,4 @@ terminar navbar
 
 >>> texto footer mas peque
 
-cambiar cabra por la q no tiene fondo
+>>> cambiar cabra por la q no tiene fondo
