@@ -7,7 +7,7 @@ Porfolio: (español e ingles)
 - roles
 - estudios
 - habilidades tecnicas
-- enlaces a pags personales
+- enlaces a pags personales     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 >>> About
 - logo
@@ -16,7 +16,7 @@ Porfolio: (español e ingles)
 - manifiesto
 
 
-Proyectos de los miembros:
+>>> Proyectos de los miembros:
 - explicar que son proyectos de antes de fundar el estudio
 - thumbnail del protecto, nombvre, descripcion, herramientas usada(s) y enlace (opcional)
 
@@ -31,7 +31,7 @@ Proyectos de los miembros:
 
 >>> separar "nuestro manifiesto"
 
-terminar navbar
+>>> terminar navbar
 
 >>> texto footer mas peque
 
