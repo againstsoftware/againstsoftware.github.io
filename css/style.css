@@ -413,45 +413,29 @@ body {
     transition: 0.5s;
     color: var(--bs-dark);
     display: block;
-    margin: auto; /* Centers the element horizontally */
-    width: 100%; /* Occupy full width of its container */
-    height: auto; /* Maintain the natural height */
-    max-width: 1200px; /* Maximum width to prevent it from spanning the entire screen */
+    margin: auto;
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+    background: url('../img/papel_blanco.jpg') no-repeat center center;
+    background-size: cover;
 }
 
-
 .testimonial-carousel .testimonial-item {
-    padding: 10%;
+    padding: 10% 10% 5%; /* Reduced bottom padding */
 }
 
 .testimonial-center {
     display: block;
     width: 100%;
     height: auto;
-    /* margin-left: calc(15%); */
 }
 
-/* Boton izquierda */
-.testimonial-carousel .owl-nav .owl-prev {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--bs-white);
-    color: var(--bs-primary);
-    transition: 0.5s;
-}
-
-/* Boton derecha */
+/* Navigation arrows - default state (desktop) */
+.testimonial-carousel .owl-nav .owl-prev,
 .testimonial-carousel .owl-nav .owl-next {
     position: absolute;
     top: 50%;
-    right: 0;
     transform: translateY(-50%);
     width: 60px;
     height: 60px;
@@ -463,7 +447,15 @@ body {
     transition: 0.5s;
 }
 
-/* Botones hover */
+.testimonial-carousel .owl-nav .owl-prev {
+    left: 0;
+}
+
+.testimonial-carousel .owl-nav .owl-next {
+    right: 0;
+}
+
+/* Navigation arrows hover */
 .testimonial-carousel .owl-nav .owl-prev:hover,
 .testimonial-carousel .owl-nav .owl-next:hover {
     background: var(--bs-primary);
@@ -480,16 +472,39 @@ body {
     transition: 0.5s;
 }
 
+/* Mobile adjustments */
 @media (max-width: 576px) {
+    .testimonial-carousel .testimonial-item {
+        padding: 10% 5% 5%; /* Reduced side padding on mobile */
+    }
+    
     .testimonial-carousel .owl-dots {
         justify-content: start;
     }
+    
+    /* Smaller navigation arrows on mobile */
+    .testimonial-carousel .owl-nav .owl-prev,
+    .testimonial-carousel .owl-nav .owl-next {
+        width: 40px; /* Reduced from 60px */
+        height: 40px; /* Reduced from 60px */
+        opacity: 0.7; /* Make them slightly transparent */
+    }
+    
+    /* Optional: you can also adjust the position to prevent overlap */
+    .testimonial-carousel .owl-nav .owl-prev {
+        left: 0%;
+    }
+    
+    .testimonial-carousel .owl-nav .owl-next {
+        right: 0%;
+    }
 }
 
-.testimonial-carousel {
-    background: url('../img/papel_blanco.jpg') no-repeat center center;
-    background-size: cover;
-    
+/* Optional: Hide navigation arrows on very small screens */
+@media (max-width: 380px) {
+    .testimonial-carousel .owl-nav {
+        display: none;
+    }
 }
 
 /* Texto */
@@ -511,6 +526,7 @@ body {
 /* Imagen grande de arriba */
 .testimonial-carousel .border-primary {
     border-color: var(--bs-primary) !important;
+    justify-content: center;
 }
 
 /* Imágenes pequeñas de abajo */
