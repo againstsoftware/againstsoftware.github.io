@@ -26,20 +26,6 @@
 }
 /*** Color palette end***/
 
-/*** Spinner Start ***/
-#spinner {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .5s ease-out, visibility 0s linear .5s;
-    z-index: 99999;
-}
-
-#spinner.show {
-    transition: opacity .5s ease-out, visibility 0s linear 0s;
-    visibility: visible;
-    opacity: 1;
-}
-/*** Spinner End ***/
 
 .back-to-top {
     position: fixed;
@@ -235,7 +221,7 @@ body {
 /*** Text start ***/ 
 .text-body {
     color: var(--bs-dark) !important;
-    background: url('../img/papel_liso.jpg');
+    background: url('../img/papel_blanco.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -382,127 +368,6 @@ body {
 /*** About End ***/
 
 
-/*** Education Start ***/
-.education-content .education-item {
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .03);
-    transition: 0.5s;
-    z-index: 1;
-}
-
-.education-content .education-item:hover {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
-}
-
-.education-content .education-item::after {
-    content: "";
-    position: absolute;
-    width: 25%;
-    height: 100%;
-    top: 50%;
-    left: 0;
-    padding: 0;
-    transform: translateY(-50%);
-    border: 100px solid;
-    border-color: var(--bs-light) transparent var(--bs-light) var(--bs-light);
-    z-index: -1;
-}
-
-.education-content .education-item::before {
-    content: "";
-    position: absolute;
-    width: 25%;
-    height: 100%;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    border: 100px solid;
-    border-color: var(--bs-light) var(--bs-light) var(--bs-light) transparent;
-    z-index: -1;
-}
-/*** Education End ***/
-
-
-/*** Experience start ***/
-.experience-content .experience-item {
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .03);
-    transition: 0.5s;
-    z-index: 1;
-}
-
-.experience-content .experience-item:hover {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
-}
-
-.experience-content .experience-item::after {
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    top: 50%;
-    left: 0;
-    padding: 0;
-    transform: translateY(-50%);
-    border: 100px solid;
-    border-color: var(--bs-light) transparent var(--bs-light) var(--bs-light);
-    z-index: -1;
-
-}
-
-.experience-content .experience-item::before {
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    border: 100px solid;
-    border-color: var(--bs-light) var(--bs-light) var(--bs-light) transparent;
-    z-index: -1;
-}
-/*** Experience End ***/
-
-
-/*** Skills Start ***/
-.skills-content .skills-item {
-    position: relative;
-}
-
-.skills-content .skills-item::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: 50% 50% 50% 50% / 28% 28% 72% 72%;
-    background: var(--bs-light);
-    z-index: -1;
-}
-/*** Skills End ***/
-
-
-/*** Service start ***/
-.service-content .service-item {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .03);
-    transition: 0.5s;
-}
-
-.service-content .service-item:hover i {
-    color: var(--bs-primary);
-
-}
-
-.service-content .service-item:hover {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
-}
-/*** service End ***/
-
-
 /*** Portfolio Start ***/
 .portfolio-content .portfolio-item .portfolio-img {
     position: relative;
@@ -540,16 +405,6 @@ body {
     transform: rotate(-6deg);
 }
 /*** Portfolio End ***/
-
-
-/*** Blog Start ***/
-.blog-content .blog-btn a {
-    color: var(--bs-primary);
-}
-.blog-content .blog-btn a:hover {
-    color: #1a1a1a;
-}
-/*** Blog End ***/
 
 
 /*** Testimonial Start ***/
@@ -674,14 +529,6 @@ body {
 }
 /*** Testimonial End ***/
 
-/*** Contact Start ***/
-.contact-center {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin-left: calc(12.5%);
-}
-/*** Contact End ***/
 
 /*** footer Start ***/
 @media (max-width: 991px) {
@@ -690,8 +537,3 @@ body {
     }
 }
 /*** footer End ***/
-
-
-
-
-
