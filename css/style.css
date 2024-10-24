@@ -226,8 +226,8 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
-    padding: 20px;
-    margin-top: 20px;
+    padding: 5%;
+    margin-top: auto;
     filter: drop-shadow(0.1vw 0.1vw 00.1vw var(--bs-dark));
 }
 
@@ -268,7 +268,7 @@ body {
     align-items: center;
     text-align: center;
     height: 100%;
-    margin-left: calc(15%);
+    /* margin-left: calc(15%); */
 }
 
 .text-footer {
@@ -362,7 +362,7 @@ body {
     max-width: 100%;
     height: auto;
     margin: 50px;
-    margin-left: calc(50%);
+    /* margin-left: calc(50%); */
 }
 
 /*** About End ***/
@@ -428,7 +428,7 @@ body {
     display: block;
     width: 100%;
     height: auto;
-    margin-left: calc(15%);
+    /* margin-left: calc(15%); */
 }
 
 /* Boton izquierda */
@@ -488,7 +488,8 @@ body {
 
 .testimonial-carousel {
     background: url('../img/papel_blanco.jpg') no-repeat center center;
-    background-size: 100%;
+    background-size: cover;
+    
 }
 
 /* Texto */
