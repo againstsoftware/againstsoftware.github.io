@@ -109,19 +109,19 @@ body {
 
 
 .pt-6 {
-    padding-top: 60px;
+    padding-top: 4%;
 }
 
 .ps-6 {
-    padding-left: 60px;
+    padding-left: 4%;
 }
 
 .pe-6 {
-    padding-right: 60px;
+    padding-right: 4%;
 }
 
 .pb-6 {
-    padding-bottom: 60px;
+    padding-bottom: 4%;
 }
 
 
@@ -169,7 +169,7 @@ body {
         color: #fff !important; /* Ensure text is readable */
         border: none !important;
         margin: 0 !important;
-        padding-right: 25px;
+        padding-right: auto;
     }
 }
 
@@ -188,7 +188,7 @@ body {
     .container-fluid .blog-header,
     .container-fluid .testimonial-header,
     .container-fluid .contact-header {
-        padding: 25px;
+        padding: auto;
         background-color: #1a1a1a !important; /* Dark grey (almost black) */
         color: #fff !important; /* Ensure text is readable */
     }
@@ -209,7 +209,7 @@ body {
         align-items: center;
         text-align: center;
         height: 100%;
-        margin-left: calc(15%);
+        /* margin-left: calc(15%); */
     }
 }
 
@@ -236,8 +236,8 @@ body {
 }
 
 .centered-section-padding {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .text-header {
@@ -258,7 +258,7 @@ body {
 
 .text-secondary {
     font-size: 150%;
-    margin-bottom: 15px !important;
+    margin-bottom: 2% !important;
 }
 
 .text-centered {
@@ -352,8 +352,8 @@ body {
     margin: 0 auto;
     max-width: 100%; 
     height: auto;    
-    padding-top: 20px;
-    margin-left: calc(15%);
+    padding-top: 10%;
+    /* margin-left: calc(15%); */
 }
 
 .about-img img {
@@ -361,7 +361,7 @@ body {
     margin: 0 auto;
     max-width: 100%;
     height: auto;
-    margin: 50px;
+    margin: 10%;
     /* margin-left: calc(50%); */
 }
 
@@ -413,7 +413,7 @@ body {
     transition: 0.5s;
     color: var(--bs-dark);
     display: block;
-    margin: 50px auto; /* Centers the element horizontally */
+    margin: auto; /* Centers the element horizontally */
     width: 100%; /* Occupy full width of its container */
     height: auto; /* Maintain the natural height */
     max-width: 1200px; /* Maximum width to prevent it from spanning the entire screen */
@@ -421,7 +421,7 @@ body {
 
 
 .testimonial-carousel .testimonial-item {
-    padding: 60px;
+    padding: 10%;
 }
 
 .testimonial-center {
@@ -472,11 +472,11 @@ body {
 
 .testimonial-carousel .owl-dots {
     width: 100%;
-    height: 130px;
+    height: 10rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 60px 60px 60px;
+    padding: auto;
     transition: 0.5s;
 }
 
@@ -498,8 +498,8 @@ body {
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 20px;
-    padding-left: 25%;
+    padding-bottom: auto;
+    padding-left: auto;
 }
 
 /* Botoncito */
@@ -517,7 +517,7 @@ body {
 .testimonial-carousel .owl-dots .owl-dot img {
     width: 40px;
     height: 40px;
-    margin-right: 15px;
+    margin-right: 1rem;
     border: 3px solid var(--bs-gray);
     transition: 0.5s;
 }
