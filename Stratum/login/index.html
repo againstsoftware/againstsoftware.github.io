@@ -84,6 +84,7 @@
             if (window.opener) {
                 window.opener.postMessage({ username: username, password: password }, "*"); // Enviar a la pestaña original
                 window.close();
+                console.log("Se ha enviado el nombre de usuario y contraseña al juego.");
             } else {
                 alert("No se puede volver a la pestaña del juego.");
             }
