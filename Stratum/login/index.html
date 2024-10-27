@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stratum: Inicio de sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            margin: 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Inicio de sesión</h1>
+        <p>Introduce tu nombre de usuario:</p>
+        <input type="text" id="username" placeholder="Usuario">
+        <p>Introduce tu contraseña:</p>
+        <input type="password" id="password" placeholder="Contraseña">
+        <br><br>
+        <button id="backToGame">Confirmar y volver al juego</button>
+    </div>
+
+    <script>
+        document.getElementById("backToGame").addEventListener("click", function() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username.trim() === "" || password.trim() === "") {
+                alert("Por favor, introduce tanto el nombre de usuario como la contraseña.");
+                return;
+            }
+
+            // Enviar el nombre de usuario y contraseña al juego usando postMessage
+            if (window.opener) {
+                window.opener.postMessage({ username: username, password: password }, "*"); // Enviar a la pestaña original
+                window.close();
+            } else {
+                alert("No se puede volver a la pestaña del juego.");
+            }
+        });
+    </script>
+</body>
+</html>
