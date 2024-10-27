@@ -294,6 +294,80 @@ body {
     color: var(--bs-secondary) !important;
     font-size: smaller !important;
 }
+/*** Text End ***/
+
+/*** Header Start ***/
+/* Header padding adjustments */
+.portfolio-header,
+.about-header,
+.testimonial-header {
+    padding: 2rem !important; /* Base padding for all screen sizes */
+}
+
+/* Adjust header text sizing and spacing */
+.display-6 {
+    font-size: 1.75rem !important; /* Slightly smaller base size */
+    margin-bottom: 1rem !important;
+    line-height: 1.3 !important;
+}
+
+/* Responsive adjustments */
+@media (min-width: 576px) {
+    .portfolio-header,
+    .about-header,
+    .testimonial-header {
+        padding: 2.5rem !important;
+    }
+    
+    .display-6 {
+        font-size: 2rem !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .portfolio-header,
+    .about-header,
+    .testimonial-header {
+        padding: 3rem !important;
+    }
+    
+    .display-6 {
+        font-size: 2.25rem !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .portfolio-header,
+    .about-header,
+    .testimonial-header {
+        padding: 4% !important;
+    }
+    
+    .display-6 {
+        font-size: 2.5rem !important;
+    }
+}
+
+/* Additional spacing for header content */
+.text-start.d-flex.flex-column.justify-content-center {
+    padding: 0.5rem;
+}
+
+/* Ensure sub-title has proper spacing */
+.sub-title {
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Add proper spacing when stacked on mobile */
+@media (max-width: 991px) {
+    .portfolio-header,
+    .about-header,
+    .testimonial-header {
+        margin-bottom: 1rem;
+    }
+}
+/*** Header End ***/
 
 /*** Navbar Start ***/
 .nav-section {
@@ -362,21 +436,17 @@ body {
 
 /*** About Start ***/
 .about-content .about-img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%; 
-    height: auto;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     padding-top: 10%;
-    /* margin-left: calc(15%); */
 }
 
 .about-img img {
-    display: block;
-    margin: 0 auto;
     max-width: 100%;
     height: auto;
-    margin: 10%;
-    /* margin-left: calc(50%); */
+    margin: 0 auto;
 }
 
 /*** About End ***/
