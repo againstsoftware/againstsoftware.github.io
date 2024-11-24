@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stratum - Against Software</title>
-
+    
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-
     <!-- Icon Font Stylesheet -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-    <!-- CSS Stylesheet -->
-    <link href="style.css" rel="stylesheet">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
             --bs-primary: #171717;
@@ -32,6 +31,31 @@
             background-size: cover;
         }
 
+        /* Navbar styles */
+        .navbar {
+            background: var(--bs-dark) !important;
+            width: 100%;
+            min-height: 70px;
+        }
+
+        .container-fluid {
+            position: relative;
+            border-bottom: 1px solid rgba(0, 0, 0, .08);
+        }
+
+        .navbar .container {
+            position: relative;
+        }
+
+        /* Hero section */
+        .hero-section {
+            background: var(--bs-dark);
+            color: var(--bs-light);
+            padding: 6rem 0;
+            margin-bottom: 3rem;
+        }
+
+        /* Text styles */
         .text-body {
             color: var(--bs-dark) !important;
             background: url('../img/papel_blanco.jpg');
@@ -44,84 +68,6 @@
             filter: drop-shadow(0.1vw 0.1vw 00.1vw var(--bs-dark));
         }
 
-        .navbar {
-            background: var(--bs-dark);
-        }
-
-        .hero-section {
-            background: var(--bs-dark);
-            color: var(--bs-light);
-            padding: 6rem 0;
-            margin-bottom: 3rem;
-        }
-
-        .btn {
-            font-weight: 600;
-            transition: .5s;
-        }
-
-        .btn-md-square {
-            width: 40px;
-            height: 40px;
-        }
-
-        .btn-square,
-        .btn-sm-square,
-        .btn-md-square,
-        .btn-lg-square,
-        .btn-xl-square {
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: normal;
-        }
-
-        .pt-6 {
-            padding-top: 4%;
-        }
-
-        .ps-6 {
-            padding-left: 4%;
-        }
-
-        .pb-6 {
-            padding-bottom: 4%;
-        }
-
-        .btn-primary {
-            background: var(--bs-primary);
-            border: none;
-            font-weight: 600;
-            transition: .5s;
-        }
-
-        .btn-primary:hover {
-            background: var(--bs-secondary);
-        }
-
-        .card {
-            border: none;
-            background: transparent;
-        }
-
-        .card-body {
-            background: url('../img/papel_blanco.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            filter: drop-shadow(0.1vw 0.1vw 00.1vw var(--bs-dark));
-        }
-
-        .game-feature {
-            margin-bottom: 2rem;
-        }
-
-        .text-white {
-            color: #f8f9fa !important;
-            font-family: "Special Elite", system-ui;
-        }
-
         .english-text {
             font-style: italic;
             font-size: 0.8em;
@@ -132,47 +78,52 @@
             font-family: "Special Elite", system-ui;
         }
 
-        .btn.btn-light {
-            color: var(--bs-primary);
-            background: var(--bs-light);
-            border: none;
-        }
-
-        .btn.btn-light:hover {
-            color: var(--bs-white);
-            background: var(--bs-primary);
-        }
-
-        .footer {
-            background-color: #1a1a1a !important;
-            color: #fff !important;
-        }
-
-        .footer-content {
-            padding-left: 0;
-        }
-
-        .text-footer {
-            color: var(--bs-white) !important;
-            font-family: "Special Elite", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-
-        .faction-card {
-            transition: transform 0.3s ease;
-        }
-
-        .faction-card:hover {
-            transform: translateY(-5px);
+        .text-white {
+            color: #f8f9fa !important;
+            font-family: "Special Elite", system-ui;
         }
 
         .display-4 {
             font-family: "Special Elite", system-ui;
         }
 
-        .drop-shadow {
-            filter: drop-shadow(0.1vw 0.1vw 00.1vw var(--bs-dark));
+        /* Button styles */
+        .btn {
+            font-weight: 600;
+            transition: .5s;
         }
 
+        .btn-primary {
+            background: var(--bs-primary);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--bs-secondary);
+        }
+
+        .btn-light {
+            color: var(--bs-primary);
+            background: var(--bs-light);
+            border: none;
+        }
+
+        .btn-light:hover {
+            color: var(--bs-white);
+            background: var(--bs-primary);
+        }
+
+        .btn-md-square {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: normal;
+        }
+
+        /* Section styles */
         .section-header {
             position: relative;
             background: var(--bs-dark);
@@ -199,45 +150,33 @@
             font-size: 2.25rem;
         }
 
-        .section-header .english-text {
-            color: var(--bs-white);
-            opacity: 0.8;
-        }
-
-        /* For better spacing with the paper backgrounds */
         .section-content {
             padding-top: 2rem;
         }
 
-        /* Alternative style - Option 2: Container-width dark background with paper texture sides */
-        .section-header-alt {
-            display: flex;
-            align-items: center;
-            margin-bottom: 3rem;
+        /* Card styles */
+        .card {
+            border: none;
+            background: transparent;
         }
 
-        .section-header-alt::before,
-        .section-header-alt::after {
-            content: "";
-            flex: 1;
-            height: 2px;
+        .card-body {
             background: url('../img/papel_blanco.jpg');
-            margin: 0 1rem;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            filter: drop-shadow(0.1vw 0.1vw 00.1vw var(--bs-dark));
         }
 
-        .section-header-alt .header-content {
-            background: var(--bs-dark);
-            padding: 1.5rem 3rem;
-            text-align: center;
+        .faction-card {
+            transition: transform 0.3s ease;
         }
 
-        .section-header-alt h2 {
-            color: var(--bs-white);
-            font-family: "Special Elite", system-ui;
-            margin: 0;
-            font-size: 2.25rem;
+        .faction-card:hover {
+            transform: translateY(-5px);
         }
 
+        /* Grid styles */
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -259,9 +198,10 @@
             justify-content: space-between;
         }
 
+        /* Video container */
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             max-width: 100%;
@@ -276,39 +216,121 @@
             height: 100%;
         }
 
-        .rules-summary {
-            max-width: 800px;
-            margin: 0 auto;
+        /* Footer styles */
+        .footer {
+            background-color: #1a1a1a !important;
+            color: #fff !important;
         }
 
+        .footer-content {
+            padding-left: 0;
+        }
+
+        .text-footer {
+            color: var(--bs-white) !important;
+            font-family: "Special Elite", system-ui;
+        }
+
+        /* Utility classes */
+        .pt-6 { padding-top: 4%; }
+        .ps-6 { padding-left: 4%; }
+        .pb-6 { padding-bottom: 4%; }
+        .drop-shadow { filter: drop-shadow(0.1vw 0.1vw 00.1vw var(--bs-dark)); }
+
+        /* Media queries */
         @media (max-width: 991px) {
+            .navbar-collapse {
+                margin-top: 1rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding-top: 0.5rem;
+                transition: all 0.3s ease-in-out;
+            }
+            
+            .navbar-nav {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-item {
+                margin: 0.5rem 0;
+            }
+
+            .hero-section {
+                padding-top: 3rem;
+            }
+
             .container-fluid .footer-content {
                 padding-left: 0;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar-collapse {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            
+            .navbar-nav {
+                flex-direction: row;
+            }
+            
+            .nav-item {
+                margin-left: 1.5rem;
+            }
+            
+            .container-fluid::before {
+                content: "";
+                position: absolute;
+                width: 30%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: #1a1a1a;
+                z-index: -1;
             }
         }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand text-special" href="index.html">Against Software</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-special" href="index.html">Inicio / <span class="english-text">Home</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-special" href="#">Stratum</a>
-                    </li>
-                </ul>
+        <div class="container-fluid">
+            <div class="container position-relative">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <a class="navbar-brand text-special d-flex align-items-center" href="index.html">
+                        <img src="img/company_logo.png" alt="Company Logo" style="height: 30px; margin-right: 10px;">
+                        Against Software
+                    </a>
+
+                    <div class="d-none d-lg-block position-absolute start-50 translate-middle-x">
+                        <img src="img/stratum_logo_transparent.png" alt="Stratum Logo" style="height: 40px;">
+                    </div>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-special py-2" href="index.html">Inicio / <span class="english-text">Home</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-special py-2" href="#">Stratum</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
 
     <section class="hero-section text-center">
+        <div class="d-lg-none mb-4">
+            <img src="img/stratum_logo_transparent.png" alt="Stratum Logo" style="height: 80px;">
+        </div>
+
         <div class="container">
             <h1 class="display-4 mb-4">Stratum</h1>
             <p class="lead text-special">Un juego de cartas donde el equilibrio del ecosistema está en juego.</p>
@@ -338,6 +360,7 @@
                     <h2 class="text-center">Facciones / <span class="english-text">Factions</span></h2>
                 </div>
             </div>
+
             <div class="section-content">
                 <div class="feature-grid">
                     <div class="card feature-card faction-card">
@@ -354,6 +377,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="card feature-card faction-card">
                         <div class="card-body text-center">
                             <div>
@@ -368,6 +392,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="card feature-card faction-card">
                         <div class="card-body text-center">
                             <div>
