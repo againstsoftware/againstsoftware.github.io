@@ -180,7 +180,9 @@
             <img src="/img/stratum_logo_transparent.png" alt="Stratum Logo" class="logo">
         </div>
 
-        <!-- Add after logo-container and before the card -->
+        <!-- esto es como la siluetita de pfp, está puesta ahi en medio de la nada pero es que no me gusta... lo siento miguel
+
+
         <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" 
         style="width: 86px; height: 86px; background-color: var(--forest-green); border: 2px solid var(--earth-brown);">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
@@ -188,7 +190,7 @@
         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
         <circle cx="12" cy="7" r="4"></circle>
         </svg>
-        </div>
+        </div> -->
 
         <div class="card">
             <div class="card-header">
@@ -245,11 +247,12 @@
 
     <script>
         const RANKS = {
-            novice: { es: "Novato", en: "Novice" },
-            apprentice: { es: "Aprendiz", en: "Apprentice" },
-            guardian: { es: "Guardián", en: "Guardian" },
-            elderGuardian: { es: "Guardián Mayor", en: "Elder Guardian" },
-            ancientGuardian: { es: "Guardián Ancestral", en: "Ancient Guardian" }
+            plant: { es: "Plant", en: "Planta" },
+            herbivore: { es: "Herbívoro", en: "Herbivore" },
+            carnivore: { es: "Carnívoro", en: "Carnivore" },
+            aristocrat: { es: "Aristócrata", en: "Aristocrat" },
+            eldritch: { es: "Primigéneo", en: "Eldritch" },
+            deity: { es: "Deidad", en: "Deity" }
         };
 
         function toggleLanguage() {
@@ -273,14 +276,15 @@
         document.getElementById('displayUsername').textContent = username || 'Usuario';
 
         const level = Math.floor(Math.random() * 100) + 1;
-        const mmr = Math.floor(Math.random() * 2000) + 1000;
+        const mmr = Math.floor(Math.random() * 3000) + 1000;
         
         function getRankKey(mmr) {
-            if (mmr >= 2500) return "ancientGuardian";
-            if (mmr >= 2000) return "elderGuardian";
-            if (mmr >= 1500) return "guardian";
-            if (mmr >= 1000) return "apprentice";
-            return "novice";
+            if (mmr >= 3000) return "deity";
+            if (mmr >= 2500) return "eldritch";
+            if (mmr >= 2000) return "aristocrat";
+            if (mmr >= 1500) return "carnivore";
+            if (mmr >= 1000) return "herbivore";
+            return "plant";
         }
 
         function updateRankDisplay() {
@@ -329,7 +333,7 @@
         });
 
         function logout() {
-            window.location.href = 'profile.html';
+            window.location.href = './login.html';
         }
     </script>
     
