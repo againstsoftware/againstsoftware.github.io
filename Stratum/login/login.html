@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stratum: Inicio de sesión</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="/css/flag-icon.css" rel="stylesheet"/>
+
+    <style>
+        :root {
+            --forest-green: #2c5530;
+            --moss-green: #8b9e6e;
+            --earth-brown: #796355;
+            --cream: #f4e9d7;
+            --deep-brown: #403029;
+        }
+
+        body {
+            font-family: "Special Elite", system-ui;
+            background: url('https://againstsoftware.github.io/img/Fondo_liso.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+        }
+
+        .card {
+            background: var(--cream);
+            filter: drop-shadow(0.1vw 0.1vw 0.1vw var(--deep-brown));
+            border: none;
+            border-radius: 8px;
+        }
+
+        .card-header {
+            background: var(--forest-green);
+            color: var(--cream);
+            border: none;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .form-control {
+            font-family: "Special Elite", system-ui;
+            border: 1px solid var(--moss-green);
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            background-color: rgba(244, 233, 215, 0.5);
+        }
+
+        .form-control:focus {
+            border-color: var(--forest-green);
+            box-shadow: 0 0 0 0.2rem rgba(44, 85, 48, 0.25);
+        }
+
+        .form-label {
+            color: var(--deep-brown);
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--forest-green);
+            border: none;
+            padding: 0.75rem;
+            width: 100%;
+            font-family: "Special Elite", system-ui;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--moss-green);
+        }
+
+        .lang-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--forest-green);
+            color: var(--cream);
+            border: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-family: "Special Elite", system-ui;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .lang-toggle:hover {
+            background: var(--moss-green);
+        }
+
+        .flag-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .lang-toggle i {
+            font-size: 1.1rem;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            height: 256px;
+            filter: drop-shadow(0.1vw 0.1vw 0.1vw var(--deep-brown));
+        }
+
+        [data-lang="en"] .es { display: none; }
+        [data-lang="es"] .en { display: none; }
+    </style>
+</head>
+<body data-lang="es">
+    <button class="lang-toggle" onclick="toggleLanguage()">
+        <span class="es"><span class="flag-icon flag-icon-gbr"></span></span>
+        <span class="en"><span class="flag-icon flag-icon-esp"></span></span>
+    </button>
+
+    <div class="login-container">
+        <div class="logo-container">
+            <img src="/img/stratum_logo_transparent.png" alt="Stratum Logo" class="logo">
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">
+                    <span class="es">Inicio de sesión</span>
+                    <span class="en">Login</span></span>
+                </h2>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <span class="es">Nombre de usuario</span>
+                            <span class="en">Username</span>
+                        </label>
+                        <input type="text" class="form-control" id="username" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">
+                            <span class="es">Contraseña</span>
+                            <span class="en">Password</span>
+                        </label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+                    <button type="button" id="backToGame" class="btn btn-primary">
+                        <span class="es">Iniciar sesión</span>
+                        <span class="en">Login</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleLanguage() {
+            const body = document.body;
+            const currentLang = body.getAttribute('data-lang');
+            const newLang = currentLang === 'es' ? 'en' : 'es';
+            body.setAttribute('data-lang', newLang);
+            localStorage.setItem('preferredLanguage', newLang);
+        }
+
+        // Set initial language based on localStorage or default to Spanish
+        const savedLang = localStorage.getItem('preferredLanguage');
+        if (savedLang) {
+            document.body.setAttribute('data-lang', savedLang);
+        }
+
+        document.getElementById("backToGame").addEventListener("click", function() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username.trim() === "" || password.trim() === "") {
+                const currentLang = document.body.getAttribute('data-lang');
+                alert(currentLang === 'es' 
+                    ? "Por favor, introduce tanto el nombre de usuario como la contraseña."
+                    : "Please enter both username and password.");
+                return;
+            }
+
+            if (window.opener) {
+                window.opener.postMessage({ username: username, password: password }, "*");
+                window.close();
+            }
+            window.location.href = 'profile.html?username=' + encodeURIComponent(username);
+            });
+    </script>
+</body>
+</html>

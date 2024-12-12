@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stratum: Perfil de Usuario</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="/css/flag-icon.css" rel="stylesheet"/>
+    
+    
+    <style>
+        :root {
+            --forest-green: #2c5530;
+            --moss-green: #8b9e6e;
+            --earth-brown: #796355;
+            --cream: #f4e9d7;
+            --deep-brown: #403029;
+        }
+
+        body {
+            font-family: "Special Elite", system-ui;
+            background: url('https://againstsoftware.github.io/img/Fondo_liso.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-container {
+            width: 100%;
+            max-width: 500px;
+            padding: 2rem;
+        }
+
+        .card {
+            background: var(--cream);
+            filter: drop-shadow(0.1vw 0.1vw 0.1vw var(--deep-brown));
+            border: none;
+            border-radius: 8px;
+        }
+
+        .card-header {
+            background: var(--forest-green);
+            color: var(--cream);
+            border: none;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            border-bottom: 1px solid rgba(121, 99, 85, 0.2);
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: var(--earth-brown);
+            font-size: 0.9em;
+        }
+
+        .info-value {
+            color: var(--deep-brown);
+            font-weight: bold;
+        }
+
+        .rank-badge {
+            background: var(--moss-green);
+            color: var(--cream);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .lang-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--forest-green);
+            color: var(--cream);
+            border: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-family: "Special Elite", system-ui;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .lang-toggle:hover {
+            background: var(--moss-green);
+        }
+
+        .flag-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .lang-toggle i {
+            font-size: 1.1rem;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            height: 256px;
+            filter: drop-shadow(0.1vw 0.1vw 0.1vw var(--deep-brown));
+        }
+
+        .lang-toggle {
+            right: 1rem;
+        }
+
+        /* Style for the main action button (like login/logout) */
+        .btn-primary {
+            background: var(--forest-green);
+            border: none;
+            padding: 0.75rem;
+            width: 100%;
+            font-family: "Special Elite", system-ui;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--moss-green);
+        }
+
+        /* Add padding to card body for logout button */
+        .card-body {
+            padding: 0;
+        }
+
+        .button-container {
+            padding: 1rem;
+            border-top: 1px solid rgba(121, 99, 85, 0.2);
+        }
+
+        #avatar-container {
+            width: 96px;
+            height: 96px;
+            margin: -48px auto 1rem;
+            position: relative;
+            z-index: 1;
+            background: var(--moss-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0.1vw 0.1vw 0.1vw var(--deep-brown));
+        }
+
+        #avatar-container svg {
+            width: 64px;
+            height: 64px;
+            color: var(--cream);
+        }
+
+        [data-lang="en"] .es { display: none; }
+        [data-lang="es"] .en { display: none; }
+    </style>
+</head>
+<body data-lang="es">
+    <button class="lang-toggle" onclick="toggleLanguage()">
+        <span class="es"><span class="flag-icon flag-icon-gbr"></span></span>
+        <span class="en"><span class="flag-icon flag-icon-esp"></span></span>
+    </button>
+
+    <div class="profile-container">
+        <div class="logo-container">
+            <img src="/img/stratum_logo_transparent.png" alt="Stratum Logo" class="logo">
+        </div>
+
+        <!-- Add after logo-container and before the card -->
+        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" 
+        style="width: 86px; height: 86px; background-color: var(--forest-green); border: 2px solid var(--earth-brown);">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+            style="width: 60%; height: 60%; stroke: var(--cream); stroke-width: 1.5;">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">
+                    <span class="es">Perfil de Usuario</span>
+                    <span class="en">User Profile</span>
+                </h2>
+            </div>
+            <div class="card-body">
+                <div class="info-row">
+                    <span class="info-label">
+                        <span class="es">Usuario</span>
+                        <span class="en">Username</span>
+                    </span>
+                    <span class="info-value" id="displayUsername">...</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">
+                        <span class="es">Nivel</span>
+                        <span class="en">Level</span>
+                    </span>
+                    <span class="info-value" id="userLevel"></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">
+                        <span class="es">Puntos competitivos</span>
+                        <span class="en">MMR</span>
+                    </span>
+                    <span class="info-value" id="userMMR"></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">
+                        <span class="es">Rango</span>
+                        <span class="en">Rank</span>
+                    </span>
+                    <span class="rank-badge" id="userRank"></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">
+                        <span class="es">Suscripción</span>
+                        <span class="en">Subscription</span>
+                    </span>
+                    <span class="info-value" id="subscription"></span>
+                </div>
+                <div class="button-container">
+                    <button class="btn btn-primary" onclick="logout()">
+                        <span class="es">Cerrar sesión</span>
+                        <span class="en">Log out</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const RANKS = {
+            novice: { es: "Novato", en: "Novice" },
+            apprentice: { es: "Aprendiz", en: "Apprentice" },
+            guardian: { es: "Guardián", en: "Guardian" },
+            elderGuardian: { es: "Guardián Mayor", en: "Elder Guardian" },
+            ancientGuardian: { es: "Guardián Ancestral", en: "Ancient Guardian" }
+        };
+
+        function toggleLanguage() {
+            const body = document.body;
+            const currentLang = body.getAttribute('data-lang');
+            const newLang = currentLang === 'es' ? 'en' : 'es';
+            body.setAttribute('data-lang', newLang);
+            localStorage.setItem('preferredLanguage', newLang);
+            updateRankDisplay();
+            updateSubscriptionDates();
+        }
+
+        // Set initial language based on localStorage or default to Spanish
+        const savedLang = localStorage.getItem('preferredLanguage');
+        if (savedLang) {
+            document.body.setAttribute('data-lang', savedLang);
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        document.getElementById('displayUsername').textContent = username || 'Usuario';
+
+        const level = Math.floor(Math.random() * 100) + 1;
+        const mmr = Math.floor(Math.random() * 2000) + 1000;
+        
+        function getRankKey(mmr) {
+            if (mmr >= 2500) return "ancientGuardian";
+            if (mmr >= 2000) return "elderGuardian";
+            if (mmr >= 1500) return "guardian";
+            if (mmr >= 1000) return "apprentice";
+            return "novice";
+        }
+
+        function updateRankDisplay() {
+            const currentLang = document.body.getAttribute('data-lang');
+            const rankKey = getRankKey(mmr);
+            document.getElementById('userRank').textContent = RANKS[rankKey][currentLang];
+        }
+
+        const startDate = new Date();
+        startDate.setMonth(startDate.getMonth() - Math.floor(Math.random() * 6));
+        const endDate = new Date(startDate);
+        endDate.setFullYear(endDate.getFullYear() + 1);
+
+        const formatDate = (date) => {
+            const currentLang = document.body.getAttribute('data-lang');
+            return date.toLocaleDateString(currentLang === 'es' ? 'es-ES' : 'en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+        };
+
+        // Update DOM
+        document.getElementById('userLevel').textContent = level;
+        document.getElementById('userMMR').textContent = mmr;
+        updateRankDisplay();
+
+        function updateSubscriptionDates() {
+            document.getElementById('subscription').textContent = 
+                `${formatDate(startDate)} - ${formatDate(endDate)}`;
+        }
+
+        updateSubscriptionDates();
+        
+        // Update dates when language changes
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === "attributes" && mutation.attributeName === "data-lang") {
+                    updateSubscriptionDates();
+                }
+            });
+        });
+
+        observer.observe(document.body, {
+            attributes: true
+        });
+
+        function logout() {
+            window.location.href = 'profile.html';
+        }
+    </script>
+    
+</body>
+</html>
