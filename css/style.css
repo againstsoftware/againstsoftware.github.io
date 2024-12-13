@@ -1,4 +1,4 @@
-/*** Color palette start*/
+/*** Color Variables ***/
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -13,8 +13,6 @@
     --bs-white: #fff;
     --bs-gray: #6c757d;
     --bs-gray-dark: #343a40;
-
-
     --bs-primary: #171717;
     --bs-secondary: #6c757d;
     --bs-success: #198754;
@@ -22,31 +20,199 @@
     --bs-warning: #ffc107;
     --bs-danger: #dc3545;
     --bs-light: #ece9df;
-    --bs-dark: #1a1a1a; /* Dark grey (almost black) */
-}
-/*** Color palette end***/
-
-
-.back-to-top {
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    transition: 0.5s;
-    z-index: 99;
+    --bs-dark: #1a1a1a;
 }
 
-/*** Background start ***/
+/*** General Styles ***/
 body {
-    font-family: "Elite Special", system-ui;
+    font-family: "Special Elite", system-ui;
     background: url('../img/Fondo_liso.jpg') no-repeat center center fixed;
     background-size: cover;
 }
-/*** Background End ***/
 
-/*** Button Start ***/
+/* Scrollable container */
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+/*** Typography ***/
+.text-special {
+    font-family: "Special Elite", system-ui;
+}
+
+.text-body {
+    color: var(--bs-dark) !important;
+    background: url('../img/papel_blanco.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    padding: 5%;
+    margin-top: auto;
+    filter: drop-shadow(0.1vw 0.1vw 0.1vw var(--bs-dark));
+}
+
+.text-white {
+    color: #f8f9fa !important;
+}
+
+.english-text {
+    font-style: italic;
+    font-size: 0.9em;
+    color: var(--bs-secondary);
+}
+
+.text-header {
+    color: var(--bs-dark) !important;
+    font-size: 500% !important;
+}
+
+.text-xl {
+    color: var(--bs-dark) !important;
+    font-size: 500%;
+}
+
+.text-big {
+    color: var(--bs-dark) !important;
+    font-size: 200%;
+}
+
+.text-medium {
+    font-size: 80%;
+}
+
+.text-small {
+    font-size: 60%;
+}
+
+.text-footer {
+    color: var(--bs-white) !important;
+}
+
+.text-credits {
+    color: var(--bs-secondary) !important;
+    font-size: smaller !important;
+}
+
+/*** Navigation ***/
+.navbar {
+    background: var(--bs-dark) !important;
+    width: 100%;
+    min-height: 70px;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    color: var(--bs-white);
+    font-size: 1.25rem;
+}
+
+.navbar-brand img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--bs-white);
+    padding: 0.5rem 1rem;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--bs-light);
+}
+
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--bs-light);
+}
+
+/*** Hero Section ***/
+.hero-section {
+    min-height: 90vh; /* This makes it take full viewport height */
+    background: var(--bs-dark);
+    color: var(--bs-light);
+    padding: 0; /* Remove default padding */
+    margin-bottom: 3rem;
+}
+
+/* If the image is too large, you might want to constrain its height */
+.hero-section .about-img img {
+    max-height: 40vh; /* Adjust this value as needed */
+    width: auto;
+}
+
+/*** Section Headers ***/
+.section-header {
+    position: relative;
+    background: var(--bs-dark);
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    color: var(--bs-white);
+    margin: 0;
+    font-size: 2.25rem;
+    font-family: "Special Elite", system-ui;
+}
+
+.section-header::before {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bs-dark);
+    z-index: -1;
+}
+
+/*** Buttons ***/
 .btn {
     font-weight: 600;
     transition: .5s;
+}
+
+.btn.btn-primary {
+    background: var(--bs-primary);
+    color: var(--bs-white);
+    border: none;
+}
+
+.btn-big {
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    background:#2c5530;
+    border: none;
+    color: var(--bs-white);
+}
+
+.btn-big:hover {
+    background: #8b9e6e;
+    color: var(--bs-white);
+}
+
+.btn-primary {
+    background: var(--bs-primary);
+    border: none;
+    color: var(--bs-white);
+}
+
+.btn-primary:hover {
+    background: var(--bs-secondary);
+}
+
+.btn-light {
+    color: var(--bs-primary);
+    background: var(--bs-light);
+    border: none;
+}
+
+.btn-light:hover {
+    color: var(--bs-white);
+    background: var(--bs-primary);
 }
 
 .btn-square {
@@ -62,6 +228,10 @@ body {
 .btn-md-square {
     width: 40px;
     height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-lg-square {
@@ -69,429 +239,82 @@ body {
     height: 46px;
 }
 
-.btn-xl-square {
-    width: 56px;
-    height: 56px;
-}
-
-.btn-square,
-.btn-sm-square,
-.btn-md-square,
-.btn-lg-square,
-.btn-xl-square {
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: normal;
-}
-
-.btn.btn-primary {
-    background: var(--bs-primary);
-    color: var(--bs-white);
-    border: none;
-}
-
-.btn.btn-primary:hover {
-    background: var(--bs-secondary);
-    color: var(--bs-white);
-}
-
-.btn.btn-light {
-    color: var(--bs-primary);
-    border: none;
-}
-
-.btn.btn-light:hover {
-    color: var(--bs-white);
-    background: var(--bs-primary);
-}
-
-
-.pt-6 {
-    padding-top: 4%;
-}
-
-.ps-6 {
-    padding-left: 4%;
-}
-
-.pe-6 {
-    padding-right: 4%;
-}
-
-.pb-6 {
-    padding-bottom: 4%;
-}
-
-
-.sub-title {
-    font-family: "Special Elite", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 700;
-    font-size: 22px;
-}
-
-.text-white {
-    color: #f8f9fa !important;
-    font-family: "Special Elite", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-
-.container-fluid {
-    position: relative;
-    border-bottom: 1px solid rgba(0, 0, 0, .08);
-}
-
-@media (min-width: 992px) {
-    .container-fluid::before {
-        content: "";
-        position: absolute;
-        width: 30%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: #1a1a1a;
-        z-index: -1;
-    }
-
-    .container-fluid .header-content,
-    .container-fluid .about-header,
-    .container-fluid .education-header,
-    .container-fluid .experience-header,
-    .container-fluid .skills-header,
-    .container-fluid .service-header,
-    .container-fluid .portfolio-header,
-    .container-fluid .blog-header,
-    .container-fluid .testimonial-header,
-    .container-fluid .contact-header {
-        position: relative;
-        background-color: #1a1a1a !important; /* Dark grey (almost black) */
-        color: #fff !important; /* Ensure text is readable */
-        border: none !important;
-        margin: 0 !important;
-        padding-right: auto;
-    }
-}
-
-@media (max-width: 991px) {
-    .container-fluid {
-        border: none;
-    }
-
-    .container-fluid .header-content,
-    .container-fluid .about-header,
-    .container-fluid .education-header,
-    .container-fluid .experience-header,
-    .container-fluid .skills-header,
-    .container-fluid .service-header,
-    .container-fluid .portfolio-header,
-    .container-fluid .blog-header,
-    .container-fluid .testimonial-header,
-    .container-fluid .contact-header {
-        padding: auto;
-        background-color: #1a1a1a !important; /* Dark grey (almost black) */
-        color: #fff !important; /* Ensure text is readable */
-    }
-
-    .container-fluid .header-img,
-    .container-fluid .about-content,
-    .container-fluid .education-content,
-    .container-fluid .experience-content,
-    .container-fluid .skills-content,
-    .container-fluid .service-content,
-    .container-fluid .portfolio-content,
-    .container-fluid .blog-content,
-    .container-fluid .testimonial-content,
-    .container-fluid .contact-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: 100%;
-        /* margin-left: calc(15%); */
-    }
-}
-
-.bg-dark {
-    background-color: #1a1a1a !important; /* Dark grey (almost black) */
-    color: #fff !important; /* Ensure text is readable */
-}
-
-/*** Text start ***/ 
-.text-body {
-    color: var(--bs-dark) !important;
-    background: url('../img/papel_blanco.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-    padding: 5%;
-    margin-top: auto;
-    filter: drop-shadow(0.1vw 0.1vw 00.1vw var(--bs-dark));
-}
-
-.drop-shadow {
-    filter: drop-shadow(0.1vw 0.1vw 00.1vw var(--bs-dark));
-}
-
-.centered-section-padding {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-.text-header {
-    color: var(--bs-dark) !important;
-    font-size: 500% !important;
-}
-
-.text-big {
-    color: var(--bs-dark) !important;
-    font-family: "Special Elite", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 200%;
-    text-size-adjust: auto;
-}
-
-.text-medium {
-    color: var(--bs-dark) !important;
-    font-family: "Special Elite", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 80%;
-    text-size-adjust: auto;
-}
-
-.text-small {
-    color: var(--bs-dark) !important;
-    font-family: "Special Elite", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 60%;
-    text-size-adjust: auto;
-}
-
-.text-special {
-    font-family: "Special Elite", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.text-secondary {
-    font-size: 150%;
-    margin-bottom: 2% !important;
-}
-
-.text-centered {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100%;
-    /* margin-left: calc(15%); */
-}
-
-.text-footer {
-    color: var(--bs-white) !important;
-    font-family: "Special Elite", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.text-credits {
-    color: var(--bs-secondary) !important;
-    font-size: smaller !important;
-}
-/*** Text End ***/
-
-/*** Header Start ***/
-/* Header padding adjustments */
-.portfolio-header,
-.about-header,
-.testimonial-header {
-    padding: 2rem !important; /* Base padding for all screen sizes */
-}
-
-/* Adjust header text sizing and spacing */
-.display-6 {
-    font-size: 1.75rem !important; /* Slightly smaller base size */
-    margin-bottom: 1rem !important;
-    line-height: 1.3 !important;
-}
-
-/* Responsive adjustments */
-@media (min-width: 576px) {
-    .portfolio-header,
-    .about-header,
-    .testimonial-header {
-        padding: 2.5rem !important;
-    }
-    
-    .display-6 {
-        font-size: 2rem !important;
-    }
-}
-
-@media (min-width: 768px) {
-    .portfolio-header,
-    .about-header,
-    .testimonial-header {
-        padding: 3rem !important;
-    }
-    
-    .display-6 {
-        font-size: 2.25rem !important;
-    }
-}
-
-@media (min-width: 992px) {
-    .portfolio-header,
-    .about-header,
-    .testimonial-header {
-        padding: 4% !important;
-    }
-    
-    .display-6 {
-        font-size: 2.5rem !important;
-    }
-}
-
-/* Additional spacing for header content */
-.text-start.d-flex.flex-column.justify-content-center {
-    padding: 0.5rem;
-}
-
-/* Ensure sub-title has proper spacing */
-.sub-title {
-    margin-top: 0.5rem;
-    line-height: 1.4;
-}
-
-/* Add proper spacing when stacked on mobile */
-@media (max-width: 991px) {
-    .portfolio-header,
-    .about-header,
-    .testimonial-header {
-        margin-bottom: 1rem;
-    }
-}
-/*** Header End ***/
-
-/*** Navbar Start ***/
-.nav-section {
-    position: relative;
-}
-
-.nav-section .navbar {
+.back-to-top {
     position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 50%;
-    right: calc(40px - 100%);
-    transform: translateY(-50%);
+    right: 30px;
+    bottom: 30px;
     z-index: 99;
-}
-
-.navbar.navbar-light {
-    background: transparent;
-    width: 100%;
-}
-
-.navbar .navbar-nav {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    user-select: none;
+    width: 45px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: var(--bs-dark);
+    border: 2px solid var(--bs-light);
+    color: var(--bs-light);
+    border-radius: 8px;
 }
 
-.navbar .navbar-nav .nav-link {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    
-}
-
-.navbar-nav .nav-link span {
-    width: 40px; 
-    height: 40px;
-    margin-right: 8px;
-    border-right: 1px solid rgba(0, 0, 0, .08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    color: var(--bs-body);
-    transition: 0.5s;
-}
-
-.nav-section .navbar .navbar-nav .nav-item {
-    height: 40px;
-    padding: 0;
-    margin-bottom: 3px;
-    border: 1px solid rgba(0, 0, 0, .08);
-    background: var(--bs-white);
-    color: var(--bs-body);
-    font-size: 14px;
-    font-weight: 700;
-    transition: 0.5s;
-}
-
-.nav-section .navbar .navbar-nav .nav-item:hover {
-    margin-right: calc(100% + 50px);
-    color: var(--bs-primary);
-}
-/*** Navbar End ***/
-
-
-/*** About Start ***/
-.about-content .about-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding-top: 10%;
-}
-
-.about-img img {
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-}
-
-/*** About End ***/
-
-
-/*** Portfolio Start ***/
-.portfolio-content .portfolio-item .portfolio-img {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.portfolio-item .portfolio-img .portfolio-img-inner {
-    display: flex;
-    align-items: center;
-    justify-content: end;
+.back-to-top:hover {
     background: var(--bs-light);
+    color: var(--bs-dark);
+    border-color: var(--bs-dark);
 }
 
-.portfolio-item .portfolio-img .portfolio-img-inner img {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    border: var(--bs-primary) 15px solid;
-}
-
-.portfolio-content .portfolio-item .view-img {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-}
-
-.portfolio-content .portfolio-item .portfolio-img .portfolio-img-inner {
+.back-to-top.active {
+    opacity: 1;
     visibility: visible;
+}
+
+/* Make the arrow icon itself a bit more elegant */
+.back-to-top i {
+    font-size: 20px;
+}
+
+.btn.btn-primary.btn-lg-square.back-to-top {
+    background: var(--bs-primary) !important; /* Only use !important if absolutely necessary */
+    color: var(--bs-white);
+    border: 2px solid var(--bs-light);
+}
+
+.btn.btn-primary.btn-lg-square.back-to-top:hover {
+    background: var(--bs-light) !important;
+    color: var(--bs-dark);
+    border-color: var(--bs-dark);
+}
+
+/*** Portfolio Items ***/
+.portfolio-item {
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-img-inner {
+    background: var(--bs-light);
+    padding: 1rem;
     transition: 0.5s;
 }
 
-.portfolio-content .portfolio-item:hover .portfolio-img .portfolio-img-inner {
-    visibility: visible;
+.portfolio-img img {
+    width: 100%;
+    height: auto;
+    transition: 0.5s;
+}
+
+.portfolio-item:hover .portfolio-img-inner {
     transform: rotate(-6deg);
 }
-/*** Portfolio End ***/
 
-
-/*** Testimonial Start ***/
+/*** Team Carousel ***/
 .testimonial-carousel {
     position: relative;
     transition: 0.5s;
@@ -505,136 +328,177 @@ body {
     background-size: cover;
 }
 
-.testimonial-carousel .testimonial-item {
-    padding: 10% 10% 5%; /* Reduced bottom padding */
+.testimonial-fluid-img {
+    border-color: var(--bs-primary);
+    background-color: #171717;
 }
 
-.testimonial-center {
-    display: block;
+.testimonial-item {
+    padding: 2rem;
+}
+
+.testimonial-inner-img {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.testimonial-inner-img img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Navigation arrows - default state (desktop) */
-.testimonial-carousel .owl-nav .owl-prev,
-.testimonial-carousel .owl-nav .owl-next {
+.testimonial-carousel .owl-nav {
+    margin: 0;
     position: absolute;
+    width: 100%;
     top: 50%;
     transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--bs-white);
-    color: var(--bs-primary);
+    pointer-events: none; /* This allows clicking through the nav container */
+}
+
+.testimonial-carousel .owl-nav button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: var(--bs-white) !important;
+    border: none !important;
+    color: var(--bs-primary) !important;
     transition: 0.5s;
 }
 
+.testimonial-carousel .owl-nav button.owl-prev,
+.testimonial-carousel .owl-nav button.owl-next {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background: var(--bs-white) !important;
+    border: 1px solid var(--bs-primary) !important;
+    color: var(--bs-primary) !important;
+    font-size: 24px !important;
+    transition: all 0.3s ease;
+    pointer-events: auto; /* Re-enable pointer events for buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.testimonial-carousel .owl-nav button:hover {
+    background: var(--bs-primary) !important;
+    color: var(--bs-white) !important;
+}
+
+.testimonial-carousel .owl-nav button.owl-prev:hover,
+.testimonial-carousel .owl-nav button.owl-next:hover {
+    background: var(--bs-primary) !important;
+    color: var(--bs-white) !important;
+}
+
 .testimonial-carousel .owl-nav .owl-prev {
-    left: 0;
+    left: -24px;
 }
 
 .testimonial-carousel .owl-nav .owl-next {
-    right: 0;
-}
-
-/* Navigation arrows hover */
-.testimonial-carousel .owl-nav .owl-prev:hover,
-.testimonial-carousel .owl-nav .owl-next:hover {
-    background: var(--bs-primary);
-    color: var(--bs-white);
+    right: -24px;
 }
 
 .testimonial-carousel .owl-dots {
     width: 100%;
-    height: 10rem;
+    height: 80px; /* Fixed height that accommodates both normal and active states */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: auto;
-    transition: 0.5s;
+    margin-top: 2rem;
+    padding: 0;
+    position: relative; /* Add this */
 }
 
-/* Mobile adjustments */
-@media (max-width: 576px) {
-    .testimonial-carousel .testimonial-item {
-        padding: 10% 5% 5%; /* Reduced side padding on mobile */
-    }
-    
-    .testimonial-carousel .owl-dots {
-        justify-content: start;
-    }
-    
-    /* Smaller navigation arrows on mobile */
-    .testimonial-carousel .owl-nav .owl-prev,
-    .testimonial-carousel .owl-nav .owl-next {
-        width: 40px; /* Reduced from 60px */
-        height: 40px; /* Reduced from 60px */
-        opacity: 0.7; /* Make them slightly transparent */
-    }
-    
-    /* Optional: you can also adjust the position to prevent overlap */
-    .testimonial-carousel .owl-nav .owl-prev {
-        left: 0%;
-    }
-    
-    .testimonial-carousel .owl-nav .owl-next {
-        right: 0%;
-    }
+.testimonial-carousel .owl-dots .owl-dot {
+    margin: 0 0.5rem;
 }
 
-/* Optional: Hide navigation arrows on very small screens */
-@media (max-width: 380px) {
-    .testimonial-carousel .owl-nav {
-        display: none;
-    }
-}
-
-/* Texto */
-.testimonial-item .text-left {
-    text-align: left;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: auto;
-    padding-left: auto;
-}
-
-/* Botoncito */
-.testimonial-item .text-center {
-    text-align: center;
-}
-
-
-/* Imagen grande de arriba */
-.testimonial-carousel .border-primary {
-    border-color: var(--bs-primary) !important;
-    justify-content: center;
-}
-
-/* Imágenes pequeñas de abajo */
 .testimonial-carousel .owl-dots .owl-dot img {
     width: 40px;
     height: 40px;
-    margin-right: 1rem;
     border: 3px solid var(--bs-gray);
-    transition: 0.5s;
+    transition: all 0.3s ease;
 }
 
-/* Imagen pequeña de abajo ACTIVA */
 .testimonial-carousel .owl-dots .owl-dot.active img {
     width: 70px;
     height: 70px;
-    border: 3px solid var(--bs-primary);
+    border-color: var(--bs-primary);
 }
-/*** Testimonial End ***/
 
+/*** Footer ***/
+.footer {
+    background-color: var(--bs-dark) !important;
+    padding: 3rem 0;
+}
 
-/*** footer Start ***/
+.footer-content {
+    text-align: center;
+}
+
+/*** Utility Classes ***/
+.drop-shadow {
+    filter: drop-shadow(0.1vw 0.1vw 0.1vw var(--bs-dark));
+}
+
+.pt-6 { padding-top: 4rem; }
+.pb-6 { padding-bottom: 4rem; }
+.ps-6 { padding-left: 4rem; }
+.pe-6 { padding-right: 4rem; }
+
+/*** Media Queries ***/
 @media (max-width: 991px) {
-    .container-fluid .footer-content {
-        padding-left: 0;
+    .navbar-collapse {
+        background: var(--bs-dark);
+        padding: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .text-header {
+        font-size: 300% !important;
+    }
+
+    .portfolio-item {
+        margin-bottom: 1.5rem;
+    }
+
+    .testimonial-carousel {
+        padding: 1rem;
+    }
+
+    .footer-content {
+        padding: 2rem 1rem;
     }
 }
-/*** footer End ***/
+
+@media (max-width: 767px) {
+    .hero-section {
+        padding: 4rem 0;
+    }
+
+    .text-header {
+        font-size: 200% !important;
+    }
+
+    .section-header {
+        padding: 1.5rem;
+    }
+
+    .testimonial-carousel .owl-nav {
+        display: none;
+    }
+
+    .pt-6, .pb-6, .ps-6, .pe-6 {
+        padding: 2rem;
+    }
+}

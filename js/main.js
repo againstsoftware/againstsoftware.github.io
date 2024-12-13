@@ -1,14 +1,11 @@
 (function ($) {
-    "use strict";
-    
-    
-    // Initiate the wowjs
-    new WOW().init();
+  "use strict";
 
+  // Initiate the wowjs
+  new WOW().init();
 
-
-   // testimonial carousel
-   $(".testimonial-carousel").owlCarousel({
+  // testimonial carousel
+  $(".testimonial-carousel").owlCarousel({
     autoplay: true,
     items: 1,
     smartSpeed: 1500,
@@ -16,26 +13,25 @@
     dotsData: true,
     loop: true,
     margin: 25,
-    nav : true,
-    navText : [
-        '<i class="bi bi-arrow-left"></i>',
-        '<i class="bi bi-arrow-right"></i>'
-    ]
-    });
+    nav: true,
+    navText: [
+      '<i class="bi bi-arrow-left"></i>',
+      '<i class="bi bi-arrow-right"></i>',
+    ],
+  });
 
-   // Back to top button
-   $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-        $('.back-to-top').fadeIn('slow');
+  // Back to top button
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $(".back-to-top").addClass("active");
     } else {
-        $('.back-to-top').fadeOut('slow');
+      $(".back-to-top").removeClass("active");
     }
-    });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-        return false;
-    });
+  });
 
-
+  $(document).on("click", ".back-to-top", function (e) {
+    e.preventDefault();
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    return false;
+  });
 })(jQuery);
-

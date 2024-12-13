@@ -1,559 +1,822 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Against Software</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
 
-    <head>
-        <meta charset="utf-8">
-        <title>Against Software</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
 
-        <!-- Libraries Stylesheet -->
-        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
 
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <div class="container position-relative">
+          <div class="d-flex justify-content-between align-items-center w-100">
+            <a
+              class="navbar-brand text-special d-flex align-items-center"
+              href="index.html"
+            >
+              <img
+                src="img/company_logo.png"
+                alt="Company Logo"
+                style="height: 30px; margin-right: 10px"
+              />
+              Against Software
+            </a>
 
-        <!-- Favicons -->
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-    </head>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
 
-    <body>
-
-
-        <!-- Navbar Start -->
-        <div class="container-fluid nav-section border-0">
-            <nav class="navbar navbar-light">
-                <div class="navbar-nav flex-column">
-                    <a href="#asHome" class="nav-item nav-link active text-special"><span class="fa fa-home"></span> Inicio/<em>Home</em></a>
-                    <a href="#asWorks" class="nav-item nav-link text-special"><span class="fa fa-hammer"></span> Trabajos/<em>Works</em></a>
-                    <a href="#asTeam" class="nav-item nav-link text-special"><span class="fa fa-address-card"></span> Equipo/<em>Team</em></a>
-                </div>
-            </nav>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="#asHome" class="nav-link text-special active py-2"
+                  >Inicio <span class="d-none d-md-inline">/</span>
+                  <span class="english-text">Home</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#asStratum" class="nav-link text-special py-2"
+                  >Stratum</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#asManifesto" class="nav-link text-special py-2"
+                  >Manifiesto <span class="d-none d-md-inline">/</span>
+                  <span class="english-text">Manifesto</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#asWorks" class="nav-link text-special py-2"
+                  >Trabajos <span class="d-none d-md-inline">/</span>
+                  <span class="english-text">Works</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#asTeam" class="nav-link text-special py-2"
+                  >Equipo <span class="d-none d-md-inline">/</span>
+                  <span class="english-text">Team</span></a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-        <!-- Navbar End -->
+      </div>
+    </nav>
 
-
-        <!-- Hola Start -->
-        <div class="container-fluid" id="asHome">
-            <div class="container">
-                <div class="row g-0">
-                    <div class="col-12 col-lg-3">
-                        <div class="about-header bg-dark h-100 pt-6 pe-6 pb-6">
-                            <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.05s">
-                                <h1 class="display-6 text-white">Hola, somos</h1>
-                                <em class="text-white sub-title">Hi, we are</em>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-9">
-                        <div class="about-content h-100 pt-6 ps-6 pb-6">
-                            <div class="row g-5 centered-section-padding">
-                                <div class="col-xl-15 text-centered wow fadeInUp" data-wow-delay="0.1s">
-                                    <h1 class="text-big text-header">Against Software</h1>
-                                </div>
-                            </div>
-                            <div class="row justify-content-center centered-section-padding">
-                                <div class="col-12 col-xl-8">
-                                    <div class="about-img p-4 wow fadeInUp" data-wow-delay="0.05s">
-                                        <img src="img/la cabra.png" class="img-fluid mx-auto d-block" alt="Image">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row g-5">
-                                <div class="col-xl-15">
-                                    <p class="mb-4 text-body text-special">
-                                        Somos un pequeño estudio independiente de videojuegos basado en Madrid.
-                                        <br> 
-                                        <em>We are a small indie game development team based in Madrid.</em>
-                                        <br><br>
-                                        Esta empresa se fundó muy recientemente, en septiembre de 2024.
-                                        <br>
-                                        <em>This business was founded very recently, in September 2024.</em>
-                                    </p>
-                                </div>
-                                <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="0.05s">
-                                    <div class="row g-4 align-items-center">
-                                        <div class="col-xl-6">
-                                            <h1 class="text-body text-special">Stratum</h1>
-                                            <h4 class="mb-4 text-body text-special">Nuestro próximo lanzamiento:
-                                                <br><span class="text-medium"><em>Our next release:</em></span><br>
-                                            </h4>
-                                        </div>
-                                        <div class="col-9 col-xl-4">
-                                            <div class="portfolio-img">
-                                                <div class="portfolio-img-inner">
-                                                    <img src="/img/stratum.png" class="img-fluid" alt="Image">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 col-xl-1">
-                                            <a href="/stratum.html" class="btn btn-primary btn-lg-square"><i class="fas fa-plus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-15">
-                                    <p class="mb-4 text-body text-special">
-                                        Actualmente estamos desarrollando <bold><em>Stratum</em></bold>, nuestro primer videojuego.
-                                        <br> 
-                                        <em>We are currently developing <bold><em>Stratum</em></bold>, our first video game.</em>
-                                        <br><br>
-                                        Puedes seguir el progreso de desarrollo en nuestro GitHub, donde encontrarás toda la información del juego.
-                                        <br>
-                                        <em>You can follow the development progress on our GitHub, where you will find all about the game.</em>
-                                        <br><br>
-                                        <a href="https://github.com/againstsoftware/stratum-new" class="btn btn-primary btn-sm mt-2">GitHub</a>
-                                    </p>
-                                </div>
-                                <div class="col-xl-15 wow fadeInUp" data-wow-delay="0.1s">
-                                    <h4 class="text-big">Nuestro manifiesto</h4>
-                                    <em class="text-big text-secondary">Our manifesto</em>
-                                    <p class="mb-4 text-body text-special">
-                                        Porque estamos en contra del software. <br>
-                                        Nosotros hacemos juegos, no software. <br>
-                                        Nuestro juego será una experiencia casi tangible. Analógica. Inmersiva. <br>
-                                        <br>
-                                        <em>
-                                        Because we're against software. <br>
-                                        We create games, not just software. <br>
-                                        Our game will be an almost tangible experience — analog, immersive. <br>
-                                        </em>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <section
+      class="hero-section text-center d-flex align-items-center"
+      id="asHome"
+    >
+      <div class="container">
+        <h1 class="display-4 mb-4">Against Software</h1>
+        <div class="row justify-content-center">
+          <div class="col-12 col-xl-8">
+            <div class="about-img p-4 wow fadeInUp">
+              <img
+                src="img/company_logo.png"
+                class="img-fluid mx-auto d-block"
+                alt="Logo"
+              />
             </div>
+          </div>
         </div>
-        <!-- Hola End -->
+      </div>
+    </section>
 
-        <!-- Portfolio Start -->
-        <div class="container-fluid" id="asWorks">
-            <div class="container">
-                <div class="row g-0">
-                    <div class="col-lg-3">
-                        <div class="portfolio-header h-100 bg-dark">
-                            <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.05s">
-                                <h1 class="display-6 text-white">Proyectos pasados de nuestros miembros</h1>
-                                <em class="text-white sub-title">Our team members past works</em>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-9">
-                        <div class="portfolio-content h-100 pt-6 ps-6 pb-6">
-                            <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="0.05s">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-xl-6">
-                                        <h1 class="text-body text-special">Soulamander</h1>
-                                        <h4 class="mb-4 text-body text-special">Juego de plataformas y puzles 2D desarrollado en Unity.
-                                            <br><span class="text-medium"><em>2D platformer and puzzle game developed in Unity.</em></span><br>
-                                            <span class="text-small">Miguel Rico.</span>
-                                        </h4>
-                                    </div>
-                                    <div class="col-9 col-xl-4">
-                                        <div class="portfolio-img">
-                                            <div class="portfolio-img-inner">
-                                                <img src="https://img.itch.zone/aW1nLzExOTM0MzU5LnBuZw==/315x250%23c/5ebQCQ.png" class="img-fluid" alt="Image">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 col-xl-1">
-                                        <a href=https://miguelrico2031.itch.io/soulamander class="btn btn-primary btn-lg-square"><i class="fas fa-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-xl-6">
-                                        <h1 class="text-body text-special">Pac-Man</h1>
-                                        <h4 class="mb-4 text-body text-special">Recreación del videojuego clásico en JavaScript canvas.
-                                            <br><span class="text-medium"><em>Recreation of the classic video game in JavaScript canvas.</em></span><br>
-                                            <span class="text-small">Ezequiel García.</span>
-                                        </h4>
-                                    </div>
-                                    <div class="col-9 col-xl-4">
-                                        <div class="portfolio-img">
-                                            <div class="portfolio-img-inner">
-                                                <img src="./img/pacman.png" class="img-fluid" alt="Image">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 col-xl-1">
-                                        <a href="https://quiellll.github.io/Pac-Man-v1.0/" class="btn btn-primary btn-lg-square" ><i class="fas fa-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-item py-5 wow fadeInUp" data-wow-delay="0.15s">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-xl-6">
-                                        <h1 class="text-body text-special">Defense of the Pumpkin Patch</h1>
-                                        <h4 class="mb-4 text-body text-special">Juego de defensa de torres desarrollado en Unity.
-                                            <br><span class="text-medium"><em>Tower defense game developed in Unity.</em></span><br>
-                                            <span class="text-small">Miguel Rico, Ezequiel García, Gloria Llorente, Ángel Luis Rodríguez.</span>
-                                        </h4>
-                                    </div>
-                                    <div class="col-9 col-xl-4">
-                                        <div class="portfolio-img">
-                                            <div class="portfolio-img-inner view-img">
-                                                <img src="https://img.itch.zone/aW1nLzE4MjY2MTI1LnBuZw==/315x250%23c/PXngPY.png" class="img-fluid" alt="Image">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 col-xl-1">
-                                        <a href="https://miguelrico2031.itch.io/defense-of-the-pumpkin-patch" class="btn btn-primary btn-lg-square" ><i class="fas fa-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-item py-5 wow fadeInUp" data-wow-delay="0.15s">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-xl-6">
-                                        <h1 class="text-body text-special">Isla japonesa</h1>
-                                        <h4 class="mb-4 text-body text-special">Modelado 3D de un escenario de videojuego ambientado en una isla Japonesa.
-                                            <br><span class="text-medium"><em>3D modeling of a video game scenario set on a Japanese island.</em></span><br>
-                                            <span class="text-small">Javier Castro.</span>
-                                        </h4>
-                                    </div>
-                                    <div class="col-9 col-xl-4">
-                                        <div class="portfolio-img">
-                                            <div class="portfolio-img-inner view-img">
-                                                <img src="./img/escenario.jpeg" class="img-fluid" alt="Image">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 col-xl-1">
-                                        <a href="https://www.artstation.com/artwork/m8LPZ8" class="btn btn-primary btn-lg-square" ><i class="fas fa-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-item py-5 wow fadeInUp" data-wow-delay="0.15s">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-xl-6">
-                                        <h1 class="text-body text-special">IScream</h1>
-                                        <h4 class="mb-4 text-body text-special">¡Refréscate con la aventura más dulce y desafiante del verano!
-                                            <br><span class="text-medium"><em>Cool off with the sweetest and most challenging adventure of the summer!</em></span><br>
-                                            <span class="text-small">Óscar Alarcon.</span>
-                                        </h4>
-                                    </div>
-                                    <div class="col-9 col-xl-4">
-                                        <div class="portfolio-img">
-                                            <div class="portfolio-img-inner view-img">
-                                                <img src="https://img.itch.zone/aW1nLzE2MzkxMDAwLnBuZw==/315x250%23c/gKDw4u.png" class="img-fluid" alt="Image">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 col-xl-1">
-                                        <a href="https://bakerystudios.itch.io/iscreamv2" class="btn btn-primary btn-lg-square" ><i class="fas fa-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- About Text Section -->
+    <section class="mb-5">
+      <div class="container">
+        <div class="text-body">
+          <p class="mb-4 text-special">
+            Somos un pequeño estudio independiente de videojuegos basado en
+            Madrid.
+            <br />
+            <em>We are a small indie game development team based in Madrid.</em>
+            <br /><br />
+            Esta empresa se fundó muy recientemente, en septiembre de 2024.
+            <br />
+            <em>This business was founded very recently, in September 2024.</em>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stratum Section -->
+    <section class="mb-5" id="asStratum">
+      <div class="section-header">
+        <div class="container">
+          <h2 class="text-center">
+            Nuestro último lanzamiento <span class="d-none d-md-inline">/</span>
+            <span class="english-text">Our latest release</span>
+          </h2>
+        </div>
+      </div>
+      <div class="container">
+        <div class="text-body">
+          <div class="row g-4 align-items-center">
+            <div class="col-xl-6">
+              <h1 class="text-special text-xl">Stratum</h1>
+              <p class="mb-4">
+                Un juego de cartas donde el equilibrio del ecosistema está en
+                juego. ¡Ya disponible!
+                <br />
+                <em
+                  >A card game where the balance of the ecosystem is at stake.
+                  Available now!</em
+                >
+              </p>
+              <a
+                href="https://againstsoftware.itch.io/stratum"
+                class="btn btn-big"
+                >¡Juega ahora! / <em>Play now!</em></a
+              >
+              <br /><br />
+              <a href="stratum.html" class="btn btn-primary"
+                >Más información / <em>More info</em></a
+              >
             </div>
-        </div>
-        <!-- Portfolio End -->
-
-
-       
-        <!-- Equipo Start -->
-        <div class="container-fluid" id="asTeam">
-            <div class="container">
-                <div class="row g-0">
-                    <div class="col-lg-3">
-                        <div class="testimonial-header h-100 bg-dark pt-6 pe-6 pb-6">
-                            <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.05s">
-                                <h1 class="display-6 text-white">Equipo</h1>
-                                <em class="text-white sub-title">Team</em>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 drop-shadow">
-                        <div class="testimonial-content ps-6 pt-6 pe-6 pb-6">
-                            <div class="testimonial-carousel justify-content-center owl-carousel bg-light wow fadeInUp" data-wow-delay="0.05s"> 
-                                <!-- Ángel -->
-                                <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/agel.png' alt=''>">
-                                    <div class="row gy-4 gx-2 mb-4">
-                                        <div class="col-sm-6">
-                                            <div class="d-flex justify-content-center justify-content-sm-end">
-                                                <div class="testimonial-inner-img border border-primary border-3 me-sm-4" style="width: 100px; height: 100px;">
-                                                    <img src="img/agel.png" class="testimonial-fluid-img" style="object-fit: cover;" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="text-center text-sm-start">
-                                                <h5 class="mb-2">Ángel Luis Rodríguez</h5>
-                                                <p class="mb-0">Artista 3D / <em>3D Artist</em></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="container px-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-12 col-sm-8">
-                                                <div class="text-center">
-                                                    <ul class="list-unstyled small">
-                                                        <li>Diseñador de personajes / <em>Character designer</em></li>
-                                                        <li>Modelador 3D / <em>3D Modeler</em></li>
-                                                        <li>Animador 3D / <em>3D Animator</em></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-center">
-                                        <a href="https://www.instagram.com/anngeluiss/" class="btn btn-primary btn-sm mt-2">Instagram</a>
-                                    </div>
-                                </div>
-                                
-                                <!-- Ezequiel -->
-                                <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/eze.png' alt=''>">
-                                    <div class="row gy-4 gx-2 mb-4">
-                                        <div class="col-sm-6">
-                                            <div class="d-flex justify-content-center justify-content-sm-end">
-                                                <div class="testimonial-inner-img border border-primary border-3 me-sm-4" style="width: 100px; height: 100px;">
-                                                    <img src="img/eze.png" class="testimonial-fluid-img" style="object-fit: cover;" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="text-center text-sm-start">
-                                                <h5 class="mb-2">Ezequiel García</h5>
-                                                <p class="mb-0">Community Manager</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="container px-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-12 col-sm-8">
-                                                <div class="text-center">
-                                                    <ul class="list-unstyled small">
-                                                        <li>Programador gráfico / <em>Graphics programmer</em></li>
-                                                        <li>Desarrollador web / <em>Web developer</em></li>
-                                                        <li>Diseñador gráfico / <em>Graphic designer</em></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-center">
-                                        <a href="https://github.com/quiellll" class="btn btn-primary btn-sm mt-2">GitHub</a>
-                                    </div>
-                                </div>
-                                
-                                <!-- Gloria -->
-                                <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/gloria.png' alt=''>">
-                                    <div class="row gy-4 gx-2 mb-4">
-                                        <div class="col-sm-6">
-                                            <div class="d-flex justify-content-center justify-content-sm-end">
-                                                <div class="testimonial-inner-img border border-primary border-3 me-sm-4" style="width: 100px; height: 100px;">
-                                                    <img src="img/gloria.png" class="testimonial-fluid-img" style="object-fit: cover;" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="text-center text-sm-start">
-                                                <h5 class="mb-2">Gloria Llorente</h5>
-                                                <p class="mb-0">Artista 2D / <em>2D Artist</em></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="container px-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-12 col-sm-8">
-                                                <div class="text-center">
-                                                    <ul class="list-unstyled small">
-                                                        <li>Diseñadora gráfica / <em>Graphic designer</em></li>
-                                                        <li>Ilustradora / <em>Illustrator</em></li>
-                                                        <li>Artista conceptual / <em>Concept artist</em></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-center">
-                                        <a href="https://www.instagram.com/lrtrnm_/" class="btn btn-primary btn-sm mt-2">Instagram</a>
-                                    </div>
-                                </div>
-                                
-                                <!-- Javier -->
-                                <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/javi.png' alt=''>">
-                                    <div class="row gy-4 gx-2 mb-4">
-                                        <div class="col-sm-6">
-                                            <div class="d-flex justify-content-center justify-content-sm-end">
-                                                <div class="testimonial-inner-img border border-primary border-3 me-sm-4" style="width: 100px; height: 100px;">
-                                                    <img src="img/javi.png" class="testimonial-fluid-img" style="object-fit: cover;" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="text-center text-sm-start">
-                                                <h5 class="mb-2">Javier Castro</h5>
-                                                <p class="mb-0">Artista 3D / <em>3D Artist</em></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="container px-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-12 col-sm-8">
-                                                <div class="text-center">
-                                                    <ul class="list-unstyled small">
-                                                        <li>Artista conceptual / <em>Concept artist</em></li>
-                                                        <li>Modelador 3D / <em>3D Modeler</em></li>
-                                                        <li>Animador 3D / <em>3D Animator</em></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-center">
-                                        <a href="https://www.artstation.com/silver9991" class="btn btn-primary btn-sm mt-2">ArtStation</a>
-                                    </div>
-                                </div>
-                                
-                                <!-- Miguel -->
-                                <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/miguelin.png' alt=''>">
-                                    <div class="row gy-4 gx-2 mb-4">
-                                        <div class="col-sm-6">
-                                            <div class="d-flex justify-content-center justify-content-sm-end">
-                                                <div class="testimonial-inner-img border border-primary border-3 me-sm-4" style="width: 100px; height: 100px;">
-                                                    <img src="img/miguelin.png" class="testimonial-fluid-img" style="object-fit: cover;" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="text-center text-sm-start">
-                                                <h5 class="mb-2">Miguel Rico</h5>
-                                                <p class="mb-0">Programador / <em>Programmer</em></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="container px-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-12 col-sm-8">
-                                                <div class="text-center">
-                                                    <ul class="list-unstyled small">
-                                                        <li>Programador de juego / <em>Game programmer</em></li>
-                                                        <li>Programador de redes / <em>Network programmer</em></li>
-                                                        <li>Diseñador de juego / <em>Game designer</em></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-center">
-                                        <a href="https://miguelrico2031.itch.io/" class="btn btn-primary btn-sm mt-2">itch.io</a>
-                                    </div>
-                                </div>
-                                
-                                <!-- Óscar -->
-                                <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/oscar.png' alt=''>">
-                                    <div class="row gy-4 gx-2 mb-4">
-                                        <div class="col-sm-6">
-                                            <div class="d-flex justify-content-center justify-content-sm-end">
-                                                <div class="testimonial-inner-img border border-primary border-3 me-sm-4" style="width: 100px; height: 100px;">
-                                                    <img src="img/oscar.png" class="testimonial-fluid-img" style="object-fit: cover;" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="text-center text-sm-start">
-                                                <h5 class="mb-2">Óscar Alarcón</h5>
-                                                <p class="mb-0">Programador / <em>Programmer</em></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="container px-4">
-                                        <div class="row justify-content-center">
-                                            <div class="col-12 col-sm-8">
-                                                <div class="text-center">
-                                                    <ul class="list-unstyled small">
-                                                        <li>Compositor musical / <em>Music composer</em></li>
-                                                        <li>Diseñador de SFX / <em>SFX Designer</em></li>
-                                                        <li>Programador de IA / <em>AI Programmer</em></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-center">
-                                        <a href="https://www.instagram.com/oscaralarcon__/" class="btn btn-primary btn-sm mt-2">Instagram</a>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-xl-6">
+              <div class="portfolio-img">
+                <div class="portfolio-img-inner">
+                  <a href="stratum.html">
+                    <img
+                      src="/img/stratum.png"
+                      class="img-fluid"
+                      alt="Stratum"
+                    />
+                  </a>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-        <!-- Equipo End -->
+      </div>
+    </section>
 
-        <!-- Footer Start -->
-        <div class="container-fluid footer bg-dark border-bottom-0">
-            <div class="container wow fadeIn" data-wow-delay="0.05s">
-                <div class="row g-0">
-                    <div class="col-12">
-                       <div class="footer-content h-100 pt-6 ps-6 pb-6">
-                            <div class="row g-4 align-items-center">
-                                <div class="col-12 text-center">
-                                    <div class="d-flex justify-content-center">
-                                        <a class="btn btn-light btn-md-square me-3" href="https://www.youtube.com/@AgainstSoftware"><i class="fab fa-youtube"></i></a>
-                                        <a class="btn btn-light btn-md-square me-3" href="https://x.com/againstsoftware"><i class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-light btn-md-square me-3" href="https://www.instagram.com/againstsoftware"><i class="fab fa-instagram"></i></a>
+    <!-- Manifesto Section -->
+    <section class="mb-5" id="asManifesto">
+      <div class="section-header">
+        <div class="container">
+          <h2 class="text-center">
+            Manifiesto <span class="d-none d-md-inline">/</span>
+            <span class="english-text">Manifesto</span>
+          </h2>
+        </div>
+      </div>
+      <div class="container">
+        <div class="text-body">
+          <p class="mb-4 text-special">
+            Porque estamos en contra del software. <br />
+            Nosotros hacemos juegos, no software. <br />
+            Nuestro juego será una experiencia casi tangible. Analógica.
+            Inmersiva. <br />
+            <br />
+            <em>
+              Because we're against software. <br />
+              We create games, not just software. <br />
+              Our game will be an almost tangible experience — analog,
+              immersive. <br />
+            </em>
+          </p>
+        </div>
+      </div>
+    </section>
 
-                                    </div>
-                                </div>
-                                <div class="col-12 text-center">
-                                    <span class="text-footer"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright me-2"></i>Against Software</a>, Todos los derechos reservados.</span>
-                                </div>
-                                <div class="col-12 text-center text-footer text-credits">
-                                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                                    Diseñado por <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>. Distribuido por <a class="border-bottom text-white" href="https://themewagon.com">ThemeWagon</a>.
-                                </div>
-                            </div>
-                       </div>        
-                    </div>
+    <!-- Past Works Section -->
+    <section id="asWorks" class="mb-5">
+      <div class="section-header">
+        <div class="container">
+          <h2 class="text-center">
+            Proyectos pasados <span class="d-none d-md-inline">/</span>
+            <span class="english-text">Past Works</span>
+          </h2>
+        </div>
+      </div>
+      <div class="container">
+        <div class="text-body">
+          <!-- Soulamander -->
+          <div class="portfolio-item py-5 border-bottom">
+            <div class="row g-4 align-items-center">
+              <div class="col-xl-6">
+                <h3 class="text-special">Soulamander</h3>
+                <h4 class="mb-4 text-special">
+                  Juego de plataformas y puzles 2D desarrollado en Unity.
+                  <br /><span class="text-medium"
+                    ><em
+                      >2D platformer and puzzle game developed in Unity.</em
+                    ></span
+                  ><br />
+                  <span class="text-small">Miguel Rico.</span>
+                </h4>
+              </div>
+              <div class="col-9 col-xl-4">
+                <div class="portfolio-img">
+                  <div class="portfolio-img-inner">
+                    <img
+                      src="https://img.itch.zone/aW1nLzExOTM0MzU5LnBuZw==/315x250%23c/5ebQCQ.png"
+                      class="img-fluid"
+                      alt="Image"
+                    />
+                  </div>
                 </div>
+              </div>
+              <div class="col-3 col-xl-2">
+                <a
+                  href="https://miguelrico2031.itch.io/soulamander"
+                  class="btn btn-primary"
+                  >Ver más / <em>See more</em></a
+                >
+              </div>
             </div>
+          </div>
+
+          <!-- Pac-Man -->
+          <div class="portfolio-item py-5 border-bottom">
+            <div class="row g-4 align-items-center">
+              <div class="col-xl-6">
+                <h3 class="text-special">Pac-Man</h3>
+                <h4 class="mb-4 text-special">
+                  Recreación del videojuego clásico en JavaScript canvas.
+                  <br /><span class="text-medium"
+                    ><em
+                      >Recreation of the classic video game in JavaScript
+                      canvas.</em
+                    ></span
+                  ><br />
+                  <span class="text-small">Ezequiel García.</span>
+                </h4>
+              </div>
+              <div class="col-9 col-xl-4">
+                <div class="portfolio-img">
+                  <div class="portfolio-img-inner">
+                    <img src="./img/pacman.png" class="img-fluid" alt="Image" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-xl-2">
+                <a
+                  href="https://quiellll.github.io/Pac-Man-v1.0/"
+                  class="btn btn-primary"
+                  >Ver más / <em>See more</em></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Defense of the Pumpkin Patch -->
+          <div class="portfolio-item py-5 border-bottom">
+            <div class="row g-4 align-items-center">
+              <div class="col-xl-6">
+                <h3 class="text-special">Defense of the Pumpkin Patch</h3>
+                <h4 class="mb-4 text-special">
+                  Juego de defensa de torres desarrollado en Unity. <br /><span
+                    class="text-medium"
+                    ><em>Tower defense game developed in Unity.</em></span
+                  ><br />
+                  <span class="text-small"
+                    >Miguel Rico, Ezequiel García, Gloria Llorente, Ángel Luis
+                    Rodríguez.</span
+                  >
+                </h4>
+              </div>
+              <div class="col-9 col-xl-4">
+                <div class="portfolio-img">
+                  <div class="portfolio-img-inner">
+                    <img
+                      src="https://img.itch.zone/aW1nLzE4MjY2MTI1LnBuZw==/315x250%23c/PXngPY.png"
+                      class="img-fluid"
+                      alt="Image"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-xl-2">
+                <a
+                  href="https://miguelrico2031.itch.io/defense-of-the-pumpkin-patch"
+                  class="btn btn-primary"
+                  >Ver más / <em>See more</em></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Isla japonesa -->
+          <div class="portfolio-item py-5 border-bottom">
+            <div class="row g-4 align-items-center">
+              <div class="col-xl-6">
+                <h3 class="text-special">Isla japonesa</h3>
+                <h4 class="mb-4 text-special">
+                  Modelado 3D de un escenario de videojuego ambientado en una
+                  isla Japonesa. <br /><span class="text-medium"
+                    ><em
+                      >3D modeling of a video game scenario set on a Japanese
+                      island.</em
+                    ></span
+                  ><br />
+                  <span class="text-small">Javier Castro.</span>
+                </h4>
+              </div>
+              <div class="col-9 col-xl-4">
+                <div class="portfolio-img">
+                  <div class="portfolio-img-inner">
+                    <img
+                      src="./img/escenario.jpeg"
+                      class="img-fluid"
+                      alt="Image"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-xl-2">
+                <a
+                  href="https://www.artstation.com/artwork/m8LPZ8"
+                  class="btn btn-primary"
+                  >Ver más / <em>See more</em></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- IScream -->
+          <div class="portfolio-item py-5">
+            <div class="row g-4 align-items-center">
+              <div class="col-xl-6">
+                <h3 class="text-special">IScream</h3>
+                <h4 class="mb-4 text-special">
+                  ¡Refréscate con la aventura más dulce y desafiante del verano!
+                  <br /><span class="text-medium"
+                    ><em
+                      >Cool off with the sweetest and most challenging adventure
+                      of the summer!</em
+                    ></span
+                  ><br />
+                  <span class="text-small">Óscar Alarcon.</span>
+                </h4>
+              </div>
+              <div class="col-9 col-xl-4">
+                <div class="portfolio-img">
+                  <div class="portfolio-img-inner">
+                    <img
+                      src="https://img.itch.zone/aW1nLzE2MzkxMDAwLnBuZw==/315x250%23c/gKDw4u.png"
+                      class="img-fluid"
+                      alt="Image"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-xl-2">
+                <a
+                  href="https://bakerystudios.itch.io/iscreamv2"
+                  class="btn btn-primary"
+                  >Ver más / <em>See more</em></a
+                >
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- Footer End -->
+      </div>
+    </section>
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
-   
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/counterup/counterup.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    </body>
+    <!-- Team Section -->
+    <section id="asTeam" class="mb-5">
+      <div class="section-header">
+        <div class="container">
+          <h2 class="text-center">
+            Equipo <span class="d-none d-md-inline">/</span>
+            <span class="english-text">Team</span>
+          </h2>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="container drop-shadow">
+          <div class="testimonial-content ps-6 pt-6 pe-6 pb-6">
+            <div
+              class="testimonial-carousel justify-content-center owl-carousel bg-light wow fadeInUp"
+              data-wow-delay="0.05s"
+            >
+              <!-- Ángel -->
+              <div
+                class="testimonial-item"
+                data-dot="<img class='img-fluid' src='img/agel.png' alt=''>"
+              >
+                <div class="row gy-4 gx-2 mb-4">
+                  <div class="col-sm-6">
+                    <div
+                      class="d-flex justify-content-center justify-content-sm-end"
+                    >
+                      <div
+                        class="testimonial-inner-img border border-dark border-3 me-sm-4"
+                        style="width: 100px; height: 100px"
+                      >
+                        <img
+                          src="img/agel.png"
+                          class="testimonial-fluid-img"
+                          style="object-fit: cover"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="text-center text-sm-start">
+                      <h5 class="mb-2">Ángel Luis Rodríguez</h5>
+                      <p class="mb-0">Artista 3D / <em>3D Artist</em></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="container px-4">
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-sm-8">
+                      <div class="text-center">
+                        <ul class="list-unstyled small">
+                          <li>
+                            Diseñador de personajes /
+                            <em>Character designer</em>
+                          </li>
+                          <li>Modelador 3D / <em>3D Modeler</em></li>
+                          <li>Animador 3D / <em>3D Animator</em></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <a
+                    href="https://www.instagram.com/anngeluiss/"
+                    class="btn btn-primary btn-sm mt-2"
+                    >Instagram</a
+                  >
+                </div>
+              </div>
 
+              <!-- Ezequiel -->
+              <div
+                class="testimonial-item"
+                data-dot="<img class='img-fluid' src='img/eze.png' alt=''>"
+              >
+                <div class="row gy-4 gx-2 mb-4">
+                  <div class="col-sm-6">
+                    <div
+                      class="d-flex justify-content-center justify-content-sm-end"
+                    >
+                      <div
+                        class="testimonial-inner-img border border-dark border-3 me-sm-4"
+                        style="width: 100px; height: 100px"
+                      >
+                        <img
+                          src="img/eze.png"
+                          class="testimonial-fluid-img"
+                          style="object-fit: cover"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="text-center text-sm-start">
+                      <h5 class="mb-2">Ezequiel García</h5>
+                      <p class="mb-0">Community Manager</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="container px-4">
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-sm-8">
+                      <div class="text-center">
+                        <ul class="list-unstyled small">
+                          <li>
+                            Programador gráfico / <em>Graphics programmer</em>
+                          </li>
+                          <li>Desarrollador web / <em>Web developer</em></li>
+                          <li>Diseñador gráfico / <em>Graphic designer</em></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <a
+                    href="https://github.com/quiellll"
+                    class="btn btn-primary btn-sm mt-2"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+
+              <!-- Gloria -->
+              <div
+                class="testimonial-item"
+                data-dot="<img class='img-fluid' src='img/gloria.png' alt=''>"
+              >
+                <div class="row gy-4 gx-2 mb-4">
+                  <div class="col-sm-6">
+                    <div
+                      class="d-flex justify-content-center justify-content-sm-end"
+                    >
+                      <div
+                        class="testimonial-inner-img border border-dark border-3 me-sm-4"
+                        style="width: 100px; height: 100px"
+                      >
+                        <img
+                          src="img/gloria.png"
+                          class="testimonial-fluid-img"
+                          style="object-fit: cover"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="text-center text-sm-start">
+                      <h5 class="mb-2">Gloria Llorente</h5>
+                      <p class="mb-0">Artista 2D / <em>2D Artist</em></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="container px-4">
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-sm-8">
+                      <div class="text-center">
+                        <ul class="list-unstyled small">
+                          <li>
+                            Diseñadora gráfica / <em>Graphic designer</em>
+                          </li>
+                          <li>Ilustradora / <em>Illustrator</em></li>
+                          <li>Artista conceptual / <em>Concept artist</em></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <a
+                    href="https://www.instagram.com/lrtrnm_/"
+                    class="btn btn-primary btn-sm mt-2"
+                    >Instagram</a
+                  >
+                </div>
+              </div>
+
+              <!-- Javier -->
+              <div
+                class="testimonial-item"
+                data-dot="<img class='img-fluid' src='img/javi.png' alt=''>"
+              >
+                <div class="row gy-4 gx-2 mb-4">
+                  <div class="col-sm-6">
+                    <div
+                      class="d-flex justify-content-center justify-content-sm-end"
+                    >
+                      <div
+                        class="testimonial-inner-img border border-dark border-3 me-sm-4"
+                        style="width: 100px; height: 100px"
+                      >
+                        <img
+                          src="img/javi.png"
+                          class="testimonial-fluid-img"
+                          style="object-fit: cover"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="text-center text-sm-start">
+                      <h5 class="mb-2">Javier Castro</h5>
+                      <p class="mb-0">Artista 3D / <em>3D Artist</em></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="container px-4">
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-sm-8">
+                      <div class="text-center">
+                        <ul class="list-unstyled small">
+                          <li>Artista conceptual / <em>Concept artist</em></li>
+                          <li>Modelador 3D / <em>3D Modeler</em></li>
+                          <li>Animador 3D / <em>3D Animator</em></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <a
+                    href="https://www.artstation.com/silver9991"
+                    class="btn btn-primary btn-sm mt-2"
+                    >ArtStation</a
+                  >
+                </div>
+              </div>
+
+              <!-- Miguel -->
+              <div
+                class="testimonial-item"
+                data-dot="<img class='img-fluid' src='img/miguelin.png' alt=''>"
+              >
+                <div class="row gy-4 gx-2 mb-4">
+                  <div class="col-sm-6">
+                    <div
+                      class="d-flex justify-content-center justify-content-sm-end"
+                    >
+                      <div
+                        class="testimonial-inner-img border border-dark border-3 me-sm-4"
+                        style="width: 100px; height: 100px"
+                      >
+                        <img
+                          src="img/miguelin.png"
+                          class="testimonial-fluid-img"
+                          style="object-fit: cover"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="text-center text-sm-start">
+                      <h5 class="mb-2">Miguel Rico</h5>
+                      <p class="mb-0">Programador / <em>Programmer</em></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="container px-4">
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-sm-8">
+                      <div class="text-center">
+                        <ul class="list-unstyled small">
+                          <li>
+                            Programador de juego / <em>Game programmer</em>
+                          </li>
+                          <li>
+                            Programador de redes / <em>Network programmer</em>
+                          </li>
+                          <li>Diseñador de juego / <em>Game designer</em></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <a
+                    href="https://miguelrico2031.itch.io/"
+                    class="btn btn-primary btn-sm mt-2"
+                    >itch.io</a
+                  >
+                </div>
+              </div>
+
+              <!-- Óscar -->
+              <div
+                class="testimonial-item"
+                data-dot="<img class='img-fluid' src='img/oscar.png' alt=''>"
+              >
+                <div class="row gy-4 gx-2 mb-4">
+                  <div class="col-sm-6">
+                    <div
+                      class="d-flex justify-content-center justify-content-sm-end"
+                    >
+                      <div
+                        class="testimonial-inner-img border border-dark border-3 me-sm-4"
+                        style="width: 100px; height: 100px"
+                      >
+                        <img
+                          src="img/oscar.png"
+                          class="testimonial-fluid-img"
+                          style="object-fit: cover"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="text-center text-sm-start">
+                      <h5 class="mb-2">Óscar Alarcón</h5>
+                      <p class="mb-0">Programador / <em>Programmer</em></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="container px-4">
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-sm-8">
+                      <div class="text-center">
+                        <ul class="list-unstyled small">
+                          <li>Compositor musical / <em>Music composer</em></li>
+                          <li>Diseñador de SFX / <em>SFX Designer</em></li>
+                          <li>Programador de IA / <em>AI Programmer</em></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <a
+                    href="https://www.instagram.com/oscaralarcon__/"
+                    class="btn btn-primary btn-sm mt-2"
+                    >Instagram</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="container-fluid footer bg-dark border-bottom-0">
+      <div class="container">
+        <div class="row g-0">
+          <div class="col-12">
+            <div class="footer-content h-100 pt-6 ps-6 pb-6">
+              <div class="row g-4 align-items-center">
+                <div class="col-12 text-center">
+                  <div class="d-flex justify-content-center">
+                    <a
+                      class="btn btn-light btn-md-square me-3"
+                      href="https://www.youtube.com/@AgainstSoftware"
+                      ><i class="fab fa-youtube"></i
+                    ></a>
+                    <a
+                      class="btn btn-light btn-md-square me-3"
+                      href="https://x.com/againstsoftware"
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                    <a
+                      class="btn btn-light btn-md-square me-3"
+                      href="https://www.instagram.com/againstsoftware"
+                      ><i class="fab fa-instagram"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <span class="text-footer">
+                    <a href="#" class="border-bottom text-white"
+                      ><i class="fas fa-copyright me-2"></i>Against Software</a
+                    >, Todos los derechos reservados.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
 </html>
