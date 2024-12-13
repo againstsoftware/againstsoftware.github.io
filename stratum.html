@@ -1,531 +1,441 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stratum - Against Software</title>
-    
+
     <!-- Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
     <!-- Icon Font Stylesheet -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-    <style>
-        :root {
-            --bs-primary: #171717;
-            --bs-secondary: #6c757d;
-            --bs-light: #ece9df;
-            --bs-dark: #1a1a1a;
-        }
-
-        body {
-            font-family: "Special Elite", system-ui;
-            background: url('../img/Fondo_liso.jpg') no-repeat center center fixed;
-            background-size: cover;
-        }
-
-        /* Navbar styles */
-        .navbar {
-            background: var(--bs-dark) !important;
-            width: 100%;
-            min-height: 70px;
-        }
-
-        .container-fluid {
-            position: relative;
-            border-bottom: 1px solid rgba(0, 0, 0, .08);
-        }
-
-        .navbar .container {
-            position: relative;
-        }
-
-        /* Hero section */
-        .hero-section {
-            background: var(--bs-dark);
-            color: var(--bs-light);
-            padding: 6rem 0;
-            margin-bottom: 3rem;
-        }
-
-        /* Text styles */
-        .text-body {
-            color: var(--bs-dark) !important;
-            background: url('../img/papel_blanco.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            background-attachment: scroll;
-            padding: 5%;
-            margin-top: auto;
-            filter: drop-shadow(0.1vw 0.1vw 00.1vw var(--bs-dark));
-        }
-
-        .english-text {
-            font-style: italic;
-            font-size: 0.8em;
-            color: var(--bs-secondary);
-        }
-
-        .text-special {
-            font-family: "Special Elite", system-ui;
-        }
-
-        .text-white {
-            color: #f8f9fa !important;
-            font-family: "Special Elite", system-ui;
-        }
-
-        .display-4 {
-            font-family: "Special Elite", system-ui;
-        }
-
-        /* Button styles */
-        .btn {
-            font-weight: 600;
-            transition: .5s;
-        }
-
-        .btn-primary {
-            background: var(--bs-primary);
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background: var(--bs-secondary);
-        }
-
-        .btn-light {
-            color: var(--bs-primary);
-            background: var(--bs-light);
-            border: none;
-        }
-
-        .btn-light:hover {
-            color: var(--bs-white);
-            background: var(--bs-primary);
-        }
-
-        .btn-md-square {
-            width: 40px;
-            height: 40px;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: normal;
-        }
-
-        /* Section styles */
-        .section-header {
-            position: relative;
-            background: var(--bs-dark);
-            padding: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .section-header::before {
-            content: "";
-            position: absolute;
-            width: 100vw;
-            height: 100%;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--bs-dark);
-            z-index: -1;
-        }
-
-        .section-header h2 {
-            color: var(--bs-white);
-            font-family: "Special Elite", system-ui;
-            margin: 0;
-            font-size: 2.25rem;
-        }
-
-        .section-content {
-            padding-top: 2rem;
-        }
-
-        /* Card styles */
-        .card {
-            border: none;
-            background: transparent;
-        }
-
-        .card-body {
-            background: url('../img/papel_blanco.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            filter: drop-shadow(0.1vw 0.1vw 00.1vw var(--bs-dark));
-        }
-
-        .faction-card {
-            transition: transform 0.3s ease;
-        }
-
-        .faction-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Grid styles */
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 0 auto;
-            max-width: 1200px;
-        }
-
-        .feature-card {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .feature-card .card-body {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        /* Video container */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            margin: 2rem auto;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Footer styles */
-        .footer {
-            background-color: #1a1a1a !important;
-            color: #fff !important;
-        }
-
-        .footer-content {
-            padding-left: 0;
-        }
-
-        .text-footer {
-            color: var(--bs-white) !important;
-            font-family: "Special Elite", system-ui;
-        }
-
-        /* Utility classes */
-        .pt-6 { padding-top: 4%; }
-        .ps-6 { padding-left: 4%; }
-        .pb-6 { padding-bottom: 4%; }
-        .drop-shadow { filter: drop-shadow(0.1vw 0.1vw 00.1vw var(--bs-dark)); }
-
-        /* Media queries */
-        @media (max-width: 991px) {
-
-            .section-header h2 {
-                text-align: center;
-            }
-
-            .section-header h2 .english-text {
-                display: block; 
-                font-style: italic; 
-            }
-
-            .section-header h2::after {
-                content: ""; 
-            }
-
-            .navbar-collapse {
-                margin-top: 1rem;
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-                padding-top: 0.5rem;
-                transition: all 0.3s ease-in-out;
-            }
-            
-            .navbar-nav {
-                width: 100%;
-                text-align: center;
-            }
-            
-            .nav-item {
-                margin: 0.5rem 0;
-            }
-
-            .hero-section {
-                padding-top: 3rem;
-            }
-
-            .container-fluid .footer-content {
-                padding-left: 0;
-            }
-        }
-
-        @media (min-width: 992px) {
-            .navbar-collapse {
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-            
-            .navbar-nav {
-                flex-direction: row;
-            }
-            
-            .nav-item {
-                margin-left: 1.5rem;
-            }
-            
-            .container-fluid::before {
-                content: "";
-                position: absolute;
-                width: 30%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                background: #1a1a1a;
-                z-index: -1;
-            }
-
-            .section-header h2 .english-text {
-                margin-left: 0;
-                display: inline; 
-            }
-        }
-    </style>
-</head>
-<body>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <div class="container position-relative">
-                <div class="d-flex justify-content-between align-items-center w-100">
-                    <a class="navbar-brand text-special d-flex align-items-center" href="index.html">
-                        <img src="img/company_logo.png" alt="Company Logo" style="height: 30px; margin-right: 10px;">
-                        Against Software
-                    </a>
+      <div class="container-fluid">
+        <div class="container position-relative">
+          <div class="d-flex justify-content-between align-items-center w-100">
+            <a
+              class="navbar-brand text-special d-flex align-items-center"
+              href="index.html"
+            >
+              <img
+                src="img/company_logo.png"
+                alt="Company Logo"
+                style="height: 30px; margin-right: 10px"
+              />
+              Against Software
+            </a>
 
-                    <div class="d-none d-lg-block position-absolute start-50 translate-middle-x">
-                        <img src="img/stratum_logo_transparent.png" alt="Stratum Logo" style="height: 40px;">
-                    </div>
-
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-special py-2" href="index.html">Inicio <span class="d-none d-md-inline">/</span> <span class="english-text">Home</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-special py-2" href="#">Stratum</a>
-                        </li>
-                    </ul>
-                </div>
+            <div
+              class="d-none d-lg-block position-absolute start-50 translate-middle-x"
+            >
+              <img
+                src="img/stratum_logo_transparent.png"
+                alt="Stratum Logo"
+                style="height: 40px"
+              />
             </div>
+
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-special py-2" href="index.html"
+                  >Inicio <span class="d-none d-md-inline">/</span>
+                  <span class="english-text">Home</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-special py-2" href="#"
+                  >Stratum</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </nav>
 
-    <section class="hero-section text-center">
-        <div class="d-lg-none mb-4">
-            <img src="img/stratum_logo_transparent.png" alt="Stratum Logo" style="height: 80px;">
-        </div>
+    <section class="hero-section text-center d-flex align-items-center">
+      <div class="d-lg-none mb-4">
+        <img
+          src="img/stratum_logo_transparent.png"
+          alt="Stratum Logo"
+          style="height: 80px"
+        />
+      </div>
 
-        <div class="container">
-            <h1 class="display-4 mb-4">Stratum</h1>
-            <p class="lead text-special">Un juego de cartas donde el equilibrio del ecosistema está en juego.</p>
-            <p class="english-text lead mb-4">A card game where the balance of the ecosystem is at stake.</p>
-            <div class="mt-4">
-                <a href="https://github.com/againstsoftware/stratum-new" class="btn btn-primary me-2">GitHub</a>
-                <a href="https://againstsoftware.itch.io/stratum" class="btn btn-primary">itch.io</a>
-            </div>
+      <div class="container">
+        <h1 class="display-4 mb-4">Stratum</h1>
+        <p class="lead text-special">
+          Un juego de cartas donde el equilibrio del ecosistema está en juego.
+        </p>
+        <p class="english-text lead mb-4">
+          A card game where the balance of the ecosystem is at stake.
+        </p>
+        <div class="mt-4">
+          <a
+            href="https://againstsoftware.itch.io/stratum"
+            class="btn btn-big"
+            target="_blank"
+            >¡Juega ahora! / <em>Play now!</em></a
+          >
+          <br /><br />
+          <a
+            href="https://github.com/againstsoftware/stratum-new"
+            class="btn btn-light"
+            target="_blank"
+            >Código fuente / <em>Source code</em></a
+          >
         </div>
+      </div>
     </section>
 
     <main class="container">
-        <section class="mb-5">
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="text-body text-center">
-                        <p class="mb-2">En un rincón olvidado del mundo, oculto del alcance de la humanidad, yace el legendario bosque de Sylveria, donde tres facciones luchan por el control del ecosistema.</p>
-                        <p class="english-text mb-4">In a forgotten corner of the world, hidden from humanity's reach, lies the legendary forest of Sylveria, where three factions fight for control of the ecosystem.</p>
-                    </div>
-                </div>
+      <section class="mb-5">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <div class="text-body text-center">
+              <p class="mb-2">
+                En un rincón olvidado del mundo, oculto del alcance de la
+                humanidad, yace el legendario bosque de Sylveria, donde tres
+                facciones luchan por el control del ecosistema.
+              </p>
+              <p class="english-text mb-4">
+                In a forgotten corner of the world, hidden from humanity's
+                reach, lies the legendary forest of Sylveria, where three
+                factions fight for control of the ecosystem.
+              </p>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section class="mb-5">
-            <div class="section-header">
-                <div class="container">
-                    <h2 class="text-center">Facciones <span class="d-none d-md-inline">/</span> <span class="english-text">Factions</span></h2>
+      <section class="mb-5">
+        <div class="section-header">
+          <div class="container">
+            <h2 class="text-center">
+              Es tu turno <span class="d-none d-md-inline">/</span>
+              <span class="english-text">It's your turn</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="envelope-container">
+            <a href="files/Stratum_ES.pdf" download class="envelope-link">
+              <div class="scene">
+                <div class="envelope">
+                  <div class="envelope__face envelope__front">
+                    <div class="flap"></div>
+                    <div class="envelope__text">Únete</div>
+                  </div>
+                  <div class="envelope__face envelope__back"></div>
+                  <div class="envelope__side envelope__side--left"></div>
+                  <div class="envelope__side envelope__side--right"></div>
+                  <div class="envelope__side envelope__side--top"></div>
+                  <div class="envelope__side envelope__side--bottom"></div>
                 </div>
+              </div>
+            </a>
+            <a href="files/Stratum_EN.pdf" download class="envelope-link">
+              <div class="scene">
+                <div class="envelope">
+                  <div class="envelope__face envelope__front">
+                    <div class="flap"></div>
+                    <div class="envelope__text">Join now</div>
+                  </div>
+                  <div class="envelope__face envelope__back"></div>
+                  <div class="envelope__side envelope__side--left"></div>
+                  <div class="envelope__side envelope__side--right"></div>
+                  <div class="envelope__side envelope__side--top"></div>
+                  <div class="envelope__side envelope__side--bottom"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <div class="section-header">
+          <div class="container">
+            <h2 class="text-center">
+              Facciones <span class="d-none d-md-inline">/</span>
+              <span class="english-text">Factions</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="section-content">
+          <div class="feature-grid">
+            <div class="card feature-card faction-card">
+              <div class="card-body text-center">
+                <div>
+                  <h3 class="h4 card-title mb-3">Naturaleza</h3>
+                  <p class="english-text mb-3">Nature</p>
+                  <p>
+                    Los guardianes ancestrales del bosque, protectores del
+                    equilibrio natural.
+                  </p>
+                  <p class="english-text">
+                    The ancient guardians of the forest, protectors of the
+                    natural balance.
+                  </p>
+                </div>
+                <div class="mt-3">
+                  <p class="mb-0">
+                    <strong>Objetivo:</strong> Mantener el equilibrio del
+                    ecosistema.
+                  </p>
+                  <p class="english-text">
+                    Goal: Maintain the ecosystem's balance.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div class="section-content">
-                <div class="feature-grid">
-                    <div class="card feature-card faction-card">
-                        <div class="card-body text-center">
-                            <div>
-                                <h3 class="h4 card-title mb-3">Naturaleza</h3>
-                                <p class="english-text mb-3">Nature</p>
-                                <p>Los guardianes ancestrales del bosque, protectores del equilibrio natural.</p>
-                                <p class="english-text">The ancient guardians of the forest, protectors of the natural balance.</p>
-                            </div>
-                            <div class="mt-3">
-                                <p class="mb-0"><strong>Objetivo:</strong> Mantener el equilibrio del ecosistema.</p>
-                                <p class="english-text">Goal: Maintain the ecosystem's balance.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card feature-card faction-card">
-                        <div class="card-body text-center">
-                            <div>
-                                <h3 class="h4 card-title mb-3">Industria</h3>
-                                <p class="english-text mb-3">Industry</p>
-                                <p>La ambición humana personificada, buscando dominar la naturaleza.</p>
-                                <p class="english-text">Human ambition personified, seeking to dominate nature.</p>
-                            </div>
-                            <div class="mt-3">
-                                <p class="mb-0"><strong>Objetivo:</strong> Construir en los cuatro territorios.</p>
-                                <p class="english-text">Goal: Build in all four territories.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card feature-card faction-card">
-                        <div class="card-body text-center">
-                            <div>
-                                <h3 class="h4 card-title mb-3">Fungi</h3>
-                                <p class="english-text mb-3">Fungi</p>
-                                <p>Una antigua entidad que busca corromper y asimilar todo a su paso.</p>
-                                <p class="english-text">An ancient entity seeking to corrupt and assimilate everything in its path.</p>
-                            </div>
-                            <div class="mt-3">
-                                <p class="mb-0"><strong>Objetivo:</strong> Crear dos macrohongos en el tablero.</p>
-                                <p class="english-text">Goal: Create two macro-fungi on the board.</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="card feature-card faction-card">
+              <div class="card-body text-center">
+                <div>
+                  <h3 class="h4 card-title mb-3">Industria</h3>
+                  <p class="english-text mb-3">Industry</p>
+                  <p>
+                    La ambición humana personificada, buscando dominar la
+                    naturaleza.
+                  </p>
+                  <p class="english-text">
+                    Human ambition personified, seeking to dominate nature.
+                  </p>
                 </div>
+                <div class="mt-3">
+                  <p class="mb-0">
+                    <strong>Objetivo:</strong> Construir en los cuatro
+                    territorios.
+                  </p>
+                  <p class="english-text">
+                    Goal: Build in all four territories.
+                  </p>
+                </div>
+              </div>
             </div>
-        </section>
 
-        <section class="mb-5">
-            <div class="section-header">
-                <div class="container">
-                    <h2 class="text-center">Reglas <span class="d-none d-md-inline">/</span> <span class="english-text">Rules</span></h2>
+            <div class="card feature-card faction-card">
+              <div class="card-body text-center">
+                <div>
+                  <h3 class="h4 card-title mb-3">Fungi</h3>
+                  <p class="english-text mb-3">Fungi</p>
+                  <p>
+                    Una antigua entidad que busca corromper y asimilar todo a su
+                    paso.
+                  </p>
+                  <p class="english-text">
+                    An ancient entity seeking to corrupt and assimilate
+                    everything in its path.
+                  </p>
                 </div>
+                <div class="mt-3">
+                  <p class="mb-0">
+                    <strong>Objetivo:</strong> Crear dos macrohongos en el
+                    tablero.
+                  </p>
+                  <p class="english-text">
+                    Goal: Create two macro-fungi on the board.
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="section-content">
-                <div class="rules-summary">
-                    <div class="text-body">
-                        <p>Stratum es un juego de cartas para 4 jugadores donde cada uno representa una facción diferente, compitiendo por el control de un ecosistema vivo y cambiante.</p>
-                        <p class="english-text mb-4">Stratum is a 4-player card game where each player represents a different faction, competing for control of a living, changing ecosystem.</p>
-                        
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/CsUzqM_Zqgc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                        
-                        </div>
+          </div>
+        </div>
+      </section>
 
-                        <div class="mt-4">
-                            <h4>Conceptos básicos / <span class="english-text">Basic concepts</span></h4>
-                            <ul>
-                                <li>Cada jugador tiene un territorio con 5 espacios
-                                    <br><span class="english-text">Each player has a territory with 5 spaces</span>
-                                </li>
-                                <li>En tu turno, puedes jugar una carta de población y una de influencia
-                                    <br><span class="english-text">On your turn, you can play one population card and one influence card</span>
-                                </li>
-                                <li>El ecosistema cambia al final de cada ronda
-                                    <br><span class="english-text">The ecosystem changes at the end of each round</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <section class="mb-5">
+        <div class="section-header">
+          <div class="container">
+            <h2 class="text-center">
+              Reglas <span class="d-none d-md-inline">/</span>
+              <span class="english-text">Rules</span>
+            </h2>
+          </div>
+        </div>
+        <div class="section-content">
+          <div class="rules-summary">
+            <div class="text-body">
+              <p>
+                Stratum es un juego de cartas para 4 jugadores donde cada uno
+                representa una facción diferente, compitiendo por el control de
+                un ecosistema vivo y cambiante.
+              </p>
+              <p class="english-text mb-4">
+                Stratum is a 4-player card game where each player represents a
+                different faction, competing for control of a living, changing
+                ecosystem.
+              </p>
 
-        <section class="game-features mb-5">
-            <div class="section-header text-center">
-                <h2 class="text-special m-0">Características <span class="d-none d-md-inline">/</span> <span class="english-text">Features</span></h2>
+              <div class="video-container">
+                <iframe
+                  src="https://www.youtube.com/embed/CsUzqM_Zqgc"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div class="mt-4">
+                <h4>
+                  Conceptos básicos /
+                  <span class="english-text">Basic concepts</span>
+                </h4>
+                <ul>
+                  <li>
+                    Cada jugador tiene un territorio con 5 espacios <br /><span
+                      class="english-text"
+                      >Each player has a territory with 5 spaces</span
+                    >
+                  </li>
+                  <li>
+                    En tu turno, puedes jugar una carta de población y una de
+                    influencia <br /><span class="english-text"
+                      >On your turn, you can play one population card and one
+                      influence card</span
+                    >
+                  </li>
+                  <li>
+                    El ecosistema cambia al final de cada ronda <br /><span
+                      class="english-text"
+                      >The ecosystem changes at the end of each round</span
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="feature-grid">
-                <div class="text-body game-feature">
-                    <h3 class="h4">Ecosistema Dinámico</h3>
-                    <p class="english-text mb-3">Dynamic Ecosystem</p>
-                    <p>Un sistema vivo que responde a cada acción de los jugadores, creando situaciones únicas en cada partida.</p>
-                    <p class="english-text">A living system that responds to every player action, creating unique situations in each game.</p>
-                </div>
-                <div class="text-body game-feature">
-                    <h3 class="h4">Experiencia Inmersiva</h3>
-                    <p class="english-text mb-3">Immersive Experience</p>
-                    <p>Sin interfaces visibles que rompan la inmersión, todo integrado naturalmente en el entorno de juego.</p>
-                    <p class="english-text">No visible interfaces breaking immersion, everything naturally integrated into the game environment.</p>
-                </div>
-                <div class="text-body game-feature">
-                    <h3 class="h4">Jugabilidad Estratégica</h3>
-                    <p class="english-text mb-3">Strategic Gameplay</p>
-                    <p>Cada decisión importa en la lucha por el control del ecosistema.</p>
-                    <p class="english-text">Every decision matters in the struggle for ecosystem control.</p>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="game-features mb-5">
+        <div class="section-header text-center">
+          <h2 class="text-special m-0">
+            Características <span class="d-none d-md-inline">/</span>
+            <span class="english-text">Features</span>
+          </h2>
+        </div>
+        <div class="feature-grid">
+          <div class="text-body game-feature">
+            <h3 class="h4">Ecosistema Dinámico</h3>
+            <p class="english-text mb-3">Dynamic Ecosystem</p>
+            <p>
+              Un sistema vivo que responde a cada acción de los jugadores,
+              creando situaciones únicas en cada partida.
+            </p>
+            <p class="english-text">
+              A living system that responds to every player action, creating
+              unique situations in each game.
+            </p>
+          </div>
+          <div class="text-body game-feature">
+            <h3 class="h4">Experiencia Inmersiva</h3>
+            <p class="english-text mb-3">Immersive Experience</p>
+            <p>
+              Sin interfaces visibles que rompan la inmersión, todo integrado
+              naturalmente en el entorno de juego.
+            </p>
+            <p class="english-text">
+              No visible interfaces breaking immersion, everything naturally
+              integrated into the game environment.
+            </p>
+          </div>
+          <div class="text-body game-feature">
+            <h3 class="h4">Jugabilidad Estratégica</h3>
+            <p class="english-text mb-3">Strategic Gameplay</p>
+            <p>
+              Cada decisión importa en la lucha por el control del ecosistema.
+            </p>
+            <p class="english-text">
+              Every decision matters in the struggle for ecosystem control.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <div class="container-fluid footer bg-dark border-bottom-0">
-        <div class="container wow fadeIn">
-            <div class="row g-0">
-                <div class="col-12">
-                    <div class="footer-content h-100 pt-6 ps-6 pb-6">
-                        <div class="row g-4 align-items-center">
-                            <div class="col-12 text-center">
-                                <div class="d-flex justify-content-center">
-                                    <a href="https://www.youtube.com/@AgainstSoftware" class="btn btn-light btn-md-square me-3">
-                                        <i class="fab fa-youtube"></i>
-                                    </a>
-                                    <a href="https://x.com/againstsoftware" class="btn btn-light btn-md-square me-3">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a href="https://www.instagram.com/againstsoftware" class="btn btn-light btn-md-square me-3">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-    
-                            <div class="col-12 text-center">
-                                <span class="text-footer">
-                                    <a href="#" class="border-bottom text-white"><i class="fas fa-copyright me-2"></i>Against Software</a>, Todos los derechos reservados.
-                                </span>
-                            </div>
-                        </div>
+        <div class="container">
+          <div class="row g-0">
+            <div class="col-12">
+              <div class="footer-content h-100 pt-6 ps-6 pb-6">
+                <div class="row g-4 align-items-center">
+                  <div class="col-12 text-center">
+                    <div class="d-flex justify-content-center">
+                      <a
+                        class="btn btn-light btn-md-square me-3"
+                        href="https://www.youtube.com/@AgainstSoftware"
+                        target="_blank"
+                        ><i class="fab fa-youtube"></i
+                      ></a>
+                      <a
+                        class="btn btn-light btn-md-square me-3"
+                        href="https://x.com/againstsoftware"
+                        target="_blank"
+                        ><i class="fab fa-twitter"></i
+                      ></a>
+                      <a
+                        class="btn btn-light btn-md-square me-3"
+                        href="https://www.instagram.com/againstsoftware"
+                        target="_blank"
+                        ><i class="fab fa-instagram"></i
+                      ></a>
                     </div>
+                  </div>
+                  <div class="col-12 text-center">
+                    <span class="text-footer">
+                      <a href="#" class="border-bottom text-white"
+                        ><i class="fas fa-copyright me-2"></i>Against Software</a
+                      >, & Ezequiel García. Todos los derechos reservados.
+                    </span>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
