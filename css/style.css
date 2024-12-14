@@ -28,6 +28,7 @@ body {
     font-family: "Special Elite", system-ui;
     background: url('../img/Fondo_liso.jpg') no-repeat center center fixed;
     background-size: cover;
+    padding-top: 70px; /* This is to make sure the navbar doesn't overlap the content */
 }
 
 /* Scrollable container */
@@ -97,10 +98,16 @@ body {
 
 /*** Navigation ***/
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
     background: var(--bs-dark) !important;
-    width: 100%;
+    transition: all 0.3s ease;
+    /* width: 100%;
     min-height: 70px;
-    padding: 1rem 0;
+    padding: 1rem 0; */
 }
 
 .navbar-brand {
@@ -111,6 +118,21 @@ body {
 .navbar-brand img {
     height: 30px;
     margin-right: 10px;
+}
+
+.navbar-nav .nav-link-active {
+    color: var(--bs-light) !important;
+    position: relative;
+}
+
+.navbar-nav .nav-link-active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background: var(--bs-light);
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -129,7 +151,7 @@ body {
 
 /*** Hero Section ***/
 .hero-section {
-    min-height: 90vh; /* This makes it take full viewport height */
+    min-height: 95vh; /* This makes it take full viewport height */
     background: var(--bs-dark);
     color: var(--bs-light);
     padding: 0; /* Remove default padding */
@@ -667,6 +689,22 @@ body {
         background: var(--bs-dark);
         padding: 1rem;
         margin-top: 0.5rem;
+        max-height: cañc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    .navbar .container-fluid .container {
+        padding: 0 15px;
+    }
+
+    .navbar-brand {
+        z-index: 1000;
+        position: relative;
+    }
+
+    .navbar-toggler {
+        z-index: 1000;
+        position: relative;
     }
 
     .section-header h2 {
