@@ -35,28 +35,60 @@
     return false;
   });
 
-  // Navbar scroll spy
+  // Sticky Navbar
   document.addEventListener("DOMContentLoaded", function () {
-    var scrollSpy = new bootstrap.ScrollSpy(document.body, {
-      target: "#navbarNav",
-      offset: 100,
+    const dataSpyList = document.querySelectorAll('[data-bs-spy="scroll"]');
+    dataSpyList.forEach((dataSpyEl) => {
+      bootstrap.ScrollSpy.getOrCreateInstance(dataSpyEl, {
+        target: "#navbarNav",
+        offset: 100,
+        smoothScroll: true,
+      });
     });
 
     document.querySelectorAll(".navbar-nav a.nav-link").forEach((link) => {
-      if (this.hash !== "") {
-        e.preventDefault();
-        const hash = this.hash;
+      link.addEventListener("click", function (e) {
+        if (this.hash !== "") {
+          e.preventDefault();
+          const hash = this.hash;
 
-        document.querySelector(hash).scrollIntoView({
-          behavior: "smooth",
-        });
+          document.querySelectorAll(".navbar-nav a.nav-link").forEach((l) => {
+            l.classList.remove("active");
+          });
+          this.classList.add("active");
 
-        // En móvil cerrar tras pulsar un enlace
-        const navbarToggle = document.querySelector(".navbar-toggler");
-        if (window.getComputedStyle(navbarToggle).display !== "none") {
-          document.querySelector(".navbar-collapse").classList.remove("show");
+          document.querySelector(hash).scrollIntoView({
+            behavior: "smooth",
+          });
+
+          // En móvil cerrar tras pulsar un enlace
+          const navbarToggle = document.querySelector(".navbar-toggler");
+          if (window.getComputedStyle(navbarToggle).display !== "none") {
+            document.querySelector(".navbar-collapse").classList.remove("show");
+          }
         }
-      }
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      const scrollPosition = window.scrollY;
+
+      document.querySelectorAll("section").forEach((section) => {
+        const sectionTop = section.offsetTop - 150; // 150px de margen
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          const currentId = section.getAttribute("id");
+          document
+            .querySelectorAll(".navbar-nav a.nav-link")
+            .forEach((link) => {
+              link.classList.remove("active");
+              if (link.getAttribute("href") === `#${currentId}`) {
+                link.classList.add("active");
+              }
+            });
+        }
+      });
     });
   });
 })(jQuery);
