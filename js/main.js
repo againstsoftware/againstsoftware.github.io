@@ -35,7 +35,8 @@
     return false;
   });
 
-  // Sticky Navbar
+
+  // Simple navbar scroll spy
   document.addEventListener("DOMContentLoaded", function () {
     const dataSpyList = document.querySelectorAll('[data-bs-spy="scroll"]');
     dataSpyList.forEach((dataSpyEl) => {
@@ -51,44 +52,61 @@
         if (this.hash !== "") {
           e.preventDefault();
           const hash = this.hash;
-
-          document.querySelectorAll(".navbar-nav a.nav-link").forEach((l) => {
-            l.classList.remove("active");
-          });
-          this.classList.add("active");
-
           document.querySelector(hash).scrollIntoView({
             behavior: "smooth",
           });
 
           // En móvil cerrar tras pulsar un enlace
+
           const navbarToggle = document.querySelector(".navbar-toggler");
           if (window.getComputedStyle(navbarToggle).display !== "none") {
             document.querySelector(".navbar-collapse").classList.remove("show");
           }
+
         }
       });
     });
+  });
 
-    window.addEventListener("scroll", () => {
-      const scrollPosition = window.scrollY;
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector(".navbar");
+    const navbarHeight = navbar.offsetHeight;
 
-      document.querySelectorAll("section").forEach((section) => {
-        const sectionTop = section.offsetTop - 150; // 150px de margen
-        const sectionBottom = sectionTop + section.offsetHeight;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const header = entry.target.querySelector(".section-header");
+          const nextSection = entry.target.nextElementSibling;
+          
+          if (!header) return;
 
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-          const currentId = section.getAttribute("id");
-          document
-            .querySelectorAll(".navbar-nav a.nav-link")
-            .forEach((link) => {
-              link.classList.remove("active");
-              if (link.getAttribute("href") === `#${currentId}`) {
-                link.classList.add("active");
+          if (entry.isIntersecting) {
+            header.style.position = "sticky";
+            header.style.top = `${navbarHeight}px`;
+
+            // Only handle the case where headers would overlap
+            if (nextSection) {
+              const sectionRect = entry.target.getBoundingClientRect();
+              const headerRect = header.getBoundingClientRect();
+              
+              if (sectionRect.bottom <= headerRect.height + navbarHeight) {
+                header.style.position = "absolute";
+                header.style.top = `${entry.target.offsetHeight - headerRect.height}px`;
               }
-            });
-        }
-      });
+            }
+          }
+        });
+      },
+      {
+        threshold: [0],
+        rootMargin: `-${navbarHeight}px 0px 0px 0px`
+      }
+    );
+
+    // Observe each section
+    document.querySelectorAll("section").forEach((section) => {
+      observer.observe(section);
+
     });
   });
 })(jQuery);
