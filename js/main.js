@@ -35,11 +35,16 @@
     return false;
   });
 
+
   // Simple navbar scroll spy
   document.addEventListener("DOMContentLoaded", function () {
-    var scrollSpy = new bootstrap.ScrollSpy(document.body, {
-      target: "#navbarNav",
-      offset: 100,
+    const dataSpyList = document.querySelectorAll('[data-bs-spy="scroll"]');
+    dataSpyList.forEach((dataSpyEl) => {
+      bootstrap.ScrollSpy.getOrCreateInstance(dataSpyEl, {
+        target: "#navbarNav",
+        offset: 100,
+        smoothScroll: true,
+      });
     });
 
     document.querySelectorAll(".navbar-nav a.nav-link").forEach((link) => {
@@ -47,16 +52,17 @@
         if (this.hash !== "") {
           e.preventDefault();
           const hash = this.hash;
-
           document.querySelector(hash).scrollIntoView({
             behavior: "smooth",
           });
 
-          // Close mobile menu after clicking
+          // En móvil cerrar tras pulsar un enlace
+
           const navbarToggle = document.querySelector(".navbar-toggler");
           if (window.getComputedStyle(navbarToggle).display !== "none") {
             document.querySelector(".navbar-collapse").classList.remove("show");
           }
+
         }
       });
     });
@@ -100,6 +106,7 @@
     // Observe each section
     document.querySelectorAll("section").forEach((section) => {
       observer.observe(section);
+
     });
   });
 })(jQuery);
