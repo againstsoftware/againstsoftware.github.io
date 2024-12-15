@@ -35,7 +35,7 @@
     return false;
   });
 
-  // Navbar scroll spy
+  // Simple navbar scroll spy
   document.addEventListener("DOMContentLoaded", function () {
     var scrollSpy = new bootstrap.ScrollSpy(document.body, {
       target: "#navbarNav",
@@ -43,20 +43,63 @@
     });
 
     document.querySelectorAll(".navbar-nav a.nav-link").forEach((link) => {
-      if (this.hash !== "") {
-        e.preventDefault();
-        const hash = this.hash;
+      link.addEventListener("click", function (e) {
+        if (this.hash !== "") {
+          e.preventDefault();
+          const hash = this.hash;
 
-        document.querySelector(hash).scrollIntoView({
-          behavior: "smooth",
-        });
+          document.querySelector(hash).scrollIntoView({
+            behavior: "smooth",
+          });
 
-        // En móvil cerrar tras pulsar un enlace
-        const navbarToggle = document.querySelector(".navbar-toggler");
-        if (window.getComputedStyle(navbarToggle).display !== "none") {
-          document.querySelector(".navbar-collapse").classList.remove("show");
+          // Close mobile menu after clicking
+          const navbarToggle = document.querySelector(".navbar-toggler");
+          if (window.getComputedStyle(navbarToggle).display !== "none") {
+            document.querySelector(".navbar-collapse").classList.remove("show");
+          }
         }
+      });
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector(".navbar");
+    const navbarHeight = navbar.offsetHeight;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const header = entry.target.querySelector(".section-header");
+          const nextSection = entry.target.nextElementSibling;
+          
+          if (!header) return;
+
+          if (entry.isIntersecting) {
+            header.style.position = "sticky";
+            header.style.top = `${navbarHeight}px`;
+
+            // Only handle the case where headers would overlap
+            if (nextSection) {
+              const sectionRect = entry.target.getBoundingClientRect();
+              const headerRect = header.getBoundingClientRect();
+              
+              if (sectionRect.bottom <= headerRect.height + navbarHeight) {
+                header.style.position = "absolute";
+                header.style.top = `${entry.target.offsetHeight - headerRect.height}px`;
+              }
+            }
+          }
+        });
+      },
+      {
+        threshold: [0],
+        rootMargin: `-${navbarHeight}px 0px 0px 0px`
       }
+    );
+
+    // Observe each section
+    document.querySelectorAll("section").forEach((section) => {
+      observer.observe(section);
     });
   });
 })(jQuery);

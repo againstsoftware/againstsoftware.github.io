@@ -29,6 +29,7 @@ body {
     background: url('../img/Fondo_liso.jpg') no-repeat center center fixed;
     background-size: cover;
     padding-top: 70px; /* This is to make sure the navbar doesn't overlap the content */
+    overflow-x: hidden;
 }
 
 /* Scrollable container */
@@ -102,12 +103,12 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 999;
+    z-index: 1030;
     background: var(--bs-dark) !important;
     transition: all 0.3s ease;
-    /* width: 100%;
+    width: 100%;
     min-height: 70px;
-    padding: 1rem 0; */
+    padding: 1rem 0;
 }
 
 .navbar-brand {
@@ -154,22 +155,23 @@ body {
     min-height: 95vh; /* This makes it take full viewport height */
     background: var(--bs-dark);
     color: var(--bs-light);
-    padding: 0; /* Remove default padding */
+    padding: 0;
     margin-bottom: 3rem;
 }
 
-/* If the image is too large, you might want to constrain its height */
 .hero-section .about-img img {
-    max-height: 40vh; /* Adjust this value as needed */
+    max-height: 40vh; 
     width: auto;
 }
 
 /*** Section Headers ***/
 .section-header {
-    position: relative;
+    position: sticky;
+    top: 70px;
     background: var(--bs-dark);
-    padding: 2rem;
-    margin-bottom: 3rem;
+    padding: 2rem 0;
+    margin-bottom: 0;
+    z-index: 1020;
 }
 
 .section-header h2 {
@@ -189,6 +191,17 @@ body {
     transform: translateX(-50%);
     background: var(--bs-dark);
     z-index: -1;
+}
+
+/*** Sections ***/
+section {
+    position: relative;
+    min-height: auto;
+    margin-bottom: 0;
+}
+
+.section-content {
+    padding: 2rem 0;
 }
 
 /*** Buttons ***/
@@ -428,13 +441,14 @@ body {
 
 .testimonial-carousel .owl-dots {
     width: 100%;
-    height: 80px; /* Fixed height that accommodates both normal and active states */
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
-    padding: 0;
+    padding: 1rem;
     position: relative; /* Add this */
+    flex-wrap: wrap;
 }
 
 .testimonial-carousel .owl-dots .owl-dot {
@@ -685,6 +699,16 @@ body {
 
 /*** Media Queries ***/
 @media (max-width: 991px) {
+
+    body {
+        padding-top: 56px; /* Standard mobile navbar height */
+    }
+
+    .navbar {
+        min-height: 56px;
+        padding: 0.5rem 0;
+    }
+
     .navbar-collapse {
         background: var(--bs-dark);
         padding: 1rem;
@@ -705,6 +729,25 @@ body {
     .navbar-toggler {
         z-index: 1000;
         position: relative;
+    }
+
+    .section-header {
+        top: 56px;
+        padding: 0.75rem;
+        margin-bottom: 0;
+    }
+
+    .section-content {
+        padding: 1rem 0;
+    }
+
+    .text-body {
+        padding: 1rem;
+        margin: 0;
+    }
+
+    section {
+        margin-bottom: 0;
     }
 
     .section-header h2 {
@@ -729,6 +772,38 @@ body {
 }
 
 @media (max-width: 767px) {
+
+    body {
+        padding-top: 56px; /* Standard mobile navbar height */
+    }
+
+    .navbar {
+        min-height: 56px;
+        padding: 0.5rem 0;
+    }
+
+    .navbar-collapse {
+        background: var(--bs-dark);
+        padding: 1rem;
+        margin-top: 0.5rem;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    .navbar .container-fluid .container {
+        padding: 0 15px;
+    }
+
+    .navbar-brand {
+        z-index: 1000;
+        position: relative;
+    }
+
+    .navbar-toggler {
+        z-index: 1000;
+        position: relative;
+    }
+
     .hero-section {
         padding: 4rem 0;
     }
@@ -738,7 +813,26 @@ body {
     }
 
     .section-header {
-        padding: 1.5rem;
+        top: 56px;
+        padding: 0.75rem;
+        margin-bottom: 0;
+    }
+
+    .section-content {
+        padding: 1rem 0;
+    }
+
+    .text-body {
+        padding: 1rem;
+        margin: 0;
+    }
+
+    section {
+        margin-bottom: 0;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
     }
 
     .testimonial-carousel .owl-nav {
@@ -748,10 +842,7 @@ body {
     .pt-6, .pb-6, .ps-6, .pe-6 {
         padding: 2rem;
     }
-}
 
-/* Responsive adjustments */
-@media (max-width: 767px) {
     .feature-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
