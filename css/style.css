@@ -783,7 +783,7 @@ section {
   .navbar-center-logo {
     display: block;
     position: absolute;
-    top: 50%;
+    top: auto;
     left: auto;
     right: 1rem;
     /* transform: translate(100%, -100%); */
