@@ -124,6 +124,18 @@ body {
     margin-right: 10px;
 }
 
+.navbar-center-logo {
+    display: block; /* show on larger screens */
+    position: absolute;
+    top: 50%; /* center vertically */
+    left: 50%; /* center horizontally */
+    transform: translate(-50%, -50%);
+  }
+
+  .navbar-center-logo img {
+    height: 40px;
+  }
+
 .navbar-nav .nav-link-active {
     color: var(--bs-light) !important;
     position: relative;
