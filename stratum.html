@@ -35,43 +35,33 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+  <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
       <div class="container-fluid">
         <div class="container position-relative">
-          <div class="d-flex justify-content-between align-items-center w-100">
-            <a
-              class="navbar-brand text-special d-flex align-items-center"
-              href="index.html"
-            >
-              <img
-                src="img/company_logo.png"
-                alt="Company Logo"
-                style="height: 30px; margin-right: 10px"
-              />
-              Against Software
-            </a>
-
-            <div
-              class="d-none d-lg-block position-absolute start-50 translate-middle-x"
-            >
-              <img
-                src="img/stratum_logo_transparent.png"
-                alt="Stratum Logo"
-                style="height: 40px"
-              />
-            </div>
-
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
+          <!-- <div class="d-flex justify-content-between align-items-center w-100"> -->
+          <a
+            class="navbar-brand text-special d-flex align-items-center"
+            href="index.html"
+          >
+            <img
+              src="img/company_logo.png"
+              alt="Company Logo"
+              style="height: 30px; margin-right: 10px"
+            />
+            Against Software
+          </a>
+          <div class="navbar-center-logo">
+            <img src="img/stratum_logo_transparent.png" alt="Stratum Logo" />
           </div>
-
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
@@ -92,14 +82,6 @@
     </nav>
 
     <section class="hero-section text-center d-flex align-items-center">
-      <div class="d-lg-none mb-4">
-        <img
-          src="img/stratum_logo_transparent.png"
-          alt="Stratum Logo"
-          style="height: 80px"
-        />
-      </div>
-
       <div class="container">
         <h1 class="display-4 mb-4">Stratum</h1>
         <p class="lead text-special">
