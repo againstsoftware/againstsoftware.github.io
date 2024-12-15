@@ -38,12 +38,12 @@
       /*** Section Headers ***/
       .section-header {
         position: sticky;
-        top: 70px;
+        top: 100px;
         background: var(--bs-dark);
         padding: 2rem 0;
         margin-bottom: 0;
         z-index: 1020;
-        padding: 2.75rem;
+        padding: 2.5rem;
         margin: 0;
         z-index: 1020;
         width: 100%;
@@ -69,6 +69,19 @@
         left: 50%;
         background: var(--bs-dark);
         z-index: -1;
+      }
+
+      .small-video-container {
+        width: 100%;
+        max-width: 600px; /* ajustar este numerin para hacer el video mas grande o pequeño */
+        margin: 0 auto;
+      }
+
+      .custom-video-player {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
 
       @media (max-width: 991px) {
@@ -180,6 +193,12 @@
                   <span class="english-text">Features</span></a
                 >
               </li>
+              <li class="nav-item">
+                <a class="nav-link text-special py-2 login-link" href="/Stratum/login/login.html" target="_blank"
+                  >Iniciar Sesión <span class="d-none d-md-inline">/</span>
+                  <span class="english-text">Login</span></a
+                >
+              </li>
             </ul>
           </div>
         </div>
@@ -188,6 +207,17 @@
 
     <section class="hero-section text-center d-flex align-items-center">
       <div class="container">
+        <div class="small-video-container mb-4">
+          <video
+            controls
+            preload="none"
+            poster="img/thumbnail.jpg"
+            class="custom-video-player"
+          >
+            <source src="video/Teaser_compressed.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
         <h1 class="display-4 mb-4">Stratum</h1>
         <p class="lead text-special">
           Un juego de cartas donde el equilibrio del ecosistema está en juego.
